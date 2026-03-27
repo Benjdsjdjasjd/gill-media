@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gill Media — Digital Marketing Agency</title>
+  <meta name="description" content="Gill Media is a premium digital marketing agency specialising in web design, branding, and digital strategy that drives results.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- GSAP for scroll-driven animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">
+      <span class="nav__logo-text">GILL</span>
+      <span class="nav__logo-accent">MEDIA</span>
+    </a>
+    <div class="nav__links" id="navLinks">
+      <a href="#services" class="nav__link" data-index="01">Services</a>
+      <a href="#work" class="nav__link" data-index="02">Showcases</a>
+      <a href="#about" class="nav__link" data-index="03">About</a>
+      <a href="#contact" class="nav__link nav__link--cta">Let's Talk</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__inner">
+      <a href="#hero" class="mobile-menu__link" data-index="00">Home</a>
+      <a href="#services" class="mobile-menu__link" data-index="01">Services</a>
+      <a href="#work" class="mobile-menu__link" data-index="02">Showcases</a>
+      <a href="#about" class="mobile-menu__link" data-index="03">About</a>
+      <a href="#contact" class="mobile-menu__link" data-index="04">Contact</a>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SECTION 1: HERO — Dark Cosmos Theme
+       Font: Syne (bold, futuristic)
+       Palette: #06060e, #7c6aef, #00e5ff, #ff5ea0
+       ======================================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+      <canvas class="hero__particles" id="heroParticles"></canvas>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__tag">
+        <span class="hero__tag-line"></span>
+        <span class="hero__tag-text">Digital Marketing Agency</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__title-line">
+          <span class="hero__title-word" data-animate>We craft</span>
+        </span>
+        <span class="hero__title-line">
+          <span class="hero__title-word hero__title-word--accent" data-animate>digital</span>
+        </span>
+        <span class="hero__title-line">
+          <span class="hero__title-word" data-animate>experiences</span>
+        </span>
+      </h1>
+
+      <p class="hero__subtitle">Professional websites for local businesses. Designed to look incredible and generate real enquiries.</p>
+
+      <div class="hero__actions">
+        <a href="#work" class="hero__btn hero__btn--primary">
+          <span>View Our Work</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <a href="#contact" class="hero__btn hero__btn--ghost">Start a Project</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-number" data-count="100">0</span><span class="hero__stat-suffix">%</span>
+        <span class="hero__stat-label">Dedicated to You</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-number" data-count="3">0</span><span class="hero__stat-suffix"></span>
+        <span class="hero__stat-label">Flexible Packages</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-number" data-count="24">0</span><span class="hero__stat-suffix">hr</span>
+        <span class="hero__stat-label">Response Time</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider: Cosmos → Minimal -->
+  <div class="divider divider--1">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,120 C360,0 1080,0 1440,120 L1440,0 L0,0 Z" fill="#06060e"/>
+    </svg>
+  </div>
+
+  <!-- ========================================
+       SECTION 2: SERVICES — Clean Minimal Theme
+       Font: Space Grotesk (geometric, modern)
+       Palette: #fafafa, #111, #6c63ff, #e8e5ff
+       ======================================== -->
+  <section class="services" id="services">
+    <div class="services__container">
+      <div class="services__header">
+        <span class="section-tag">01 — What We Do</span>
+        <h2 class="services__title">Packages built<br>for <em>growth</em></h2>
+        <p class="services__intro">Clear, transparent pricing with no hidden fees. Choose the package that fits your business and let's get to work.</p>
+      </div>
+
+      <div class="pricing__grid">
+        <!-- Starter Package -->
+        <div class="pricing-card" data-tier="starter">
+          <div class="pricing-card__header">
+            <span class="pricing-card__tier">Starter</span>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">&pound;</span>
+              <span class="pricing-card__amount">299</span>
+            </div>
+            <p class="pricing-card__tagline">Get online fast with a clean, professional website. Perfect for sole traders &amp; small businesses.</p>
+            <span class="pricing-card__turnaround">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Delivered in 3&ndash;5 working days
+            </span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>1&ndash;3 page website (Home, About, Contact)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Mobile-first responsive design</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Contact form with email notifications</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Domain + hosting fully set up</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Basic on-page SEO (titles, meta descriptions)</span>
+            </li>
+          </ul>
+          <a href="#contact" class="pricing-card__btn pricing-card__btn--outline">Get Started</a>
+        </div>
+
+        <!-- Growth Package -->
+        <div class="pricing-card pricing-card--featured" data-tier="growth">
+          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__header">
+            <span class="pricing-card__tier">Growth</span>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">&pound;</span>
+              <span class="pricing-card__amount">699</span>
+            </div>
+            <p class="pricing-card__tagline">A website designed to generate leads, not just look good. Built for local businesses ready to grow.</p>
+            <span class="pricing-card__turnaround">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Delivered in 7&ndash;10 working days
+            </span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>4&ndash;6 page custom website</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Conversion-focused design (clear CTAs)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Lead capture forms (optimised for enquiries)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Google Maps + local business integration</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>SEO + keyword targeting (local search focus)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Blog setup (ready for SEO growth)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Social media integration</span>
+            </li>
+          </ul>
+          <a href="#contact" class="pricing-card__btn pricing-card__btn--solid">Get Started</a>
+        </div>
+
+        <!-- Pro Package -->
+        <div class="pricing-card" data-tier="pro">
+          <div class="pricing-card__header">
+            <span class="pricing-card__tier">Pro</span>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">&pound;</span>
+              <span class="pricing-card__amount">1,199</span>
+            </div>
+            <p class="pricing-card__tagline">A high-performance website built to drive consistent leads and conversions. For serious businesses.</p>
+            <span class="pricing-card__turnaround">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Delivered in 10&ndash;14 working days
+            </span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Fully custom website (6&ndash;10 pages)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Conversion-focused layout + user journey design</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Online booking / scheduling integration</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>1 landing page for ads or campaigns</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Local SEO setup (optimised for Google)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Lead tracking system (enquiries in one place)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Speed optimisation (90+ Lighthouse score)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Analytics setup (track visitors &amp; enquiries)</span>
+            </li>
+          </ul>
+          <a href="#contact" class="pricing-card__btn pricing-card__btn--outline">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Included in all packages -->
+      <div class="pricing__included">
+        <p class="pricing__included-title">Included in every package</p>
+        <div class="pricing__included-items">
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            SSL security (HTTPS)
+          </span>
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Fast, reliable hosting
+          </span>
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Fully mobile-optimised design
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider: Services → Showcases -->
+  <div class="divider divider--2">
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,0 L1440,0 L1440,50 L0,150 Z" fill="#fafafa"/>
+      <path d="M0,150 L1440,50 L1440,150 L0,150 Z" fill="#050a05"/>
+    </svg>
+    <div class="divider__glow-line"></div>
+  </div>
+
+  <!-- ========================================
+       SECTION 3: PORTFOLIO — Neon Dark Theme
+       Font: Syne (bold display)
+       Palette: #050a05, #00ff88, #a855f7, #00d4ff
+       ======================================== -->
+  <section class="work" id="work">
+    <div class="work__glow work__glow--1"></div>
+    <div class="work__glow work__glow--2"></div>
+    <div class="work__glow work__glow--3"></div>
+    <div class="work__scanlines"></div>
+
+    <div class="work__container">
+      <div class="work__header">
+        <span class="section-tag section-tag--light">02 — Showcases</span>
+        <h2 class="work__title">Websites that<br><span class="work__title-glow">deliver results</span></h2>
+        <p class="work__subtitle">Real examples of the kind of sites we build. Different industries, different styles &mdash; same commitment to quality.</p>
+      </div>
+
+      <!-- Showcase grid -->
+      <div class="showcase__grid">
+        <!-- Vikings - Live Client -->
+        <a href="showcases/vikings/index.html" target="_blank" class="showcase-card showcase-card--hero" data-project="vikings">
+          <div class="showcase-card__preview" style="background: linear-gradient(135deg, #0a0e2a 0%, #14194b 50%, #1e2560 100%);">
+            <div class="showcase-card__badge">Live Client</div>
+            <div class="showcase-card__brand">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fde900" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/><path d="M19.07 4.93L4.93 19.07"/><path d="M2 12c0 0 3.5-2 10-2s10 2 10 2"/><path d="M12 2c0 0-2 3.5-2 10s2 10 2 10"/></svg>
+              <span style="color: #fde900;">STORTFORD VIKINGS</span>
+            </div>
+            <div class="showcase-card__hover">
+              <span>View Case Study</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+          </div>
+          <div class="showcase-card__info">
+            <span class="showcase-card__type">Sports Club &bull; 4-Page Site</span>
+            <h3 class="showcase-card__name">Stortford Vikings Basketball</h3>
+            <p class="showcase-card__desc">Live standings, fixture tracking, member sign-ups &mdash; all powered by Google Sheets. Built for a non-technical coach to manage.</p>
+          </div>
+        </a>
+
+        <!-- Restaurant Demo -->
+        <a href="showcases/restaurant.html" class="showcase-card" data-project="restaurant">
+          <div class="showcase-card__preview" style="background: linear-gradient(135deg, #5C1018 0%, #3a0a10 40%, #2B2B2B 100%);">
+            <div class="showcase-card__badge showcase-card__badge--demo">Demo</div>
+            <div class="showcase-card__brand">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+              <span style="color: #C9A96E;">BELLA TAVOLA</span>
+            </div>
+            <div class="showcase-card__hover">
+              <span>View Demo</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+          </div>
+          <div class="showcase-card__info">
+            <span class="showcase-card__type">Restaurant &bull; Starter Package</span>
+            <h3 class="showcase-card__name">Bella Tavola</h3>
+            <p class="showcase-card__desc">Warm, elegant design for an Italian restaurant. Menu, bookings, and opening times.</p>
+          </div>
+        </a>
+
+        <!-- PT/Fitness Demo -->
+        <a href="showcases/fitness.html" class="showcase-card" data-project="fitness">
+          <div class="showcase-card__preview" style="background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 60%, #2a2a00 100%);">
+            <div class="showcase-card__badge showcase-card__badge--demo">Demo</div>
+            <div class="showcase-card__brand">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="1.5"><path d="M6.5 6.5h11M6.5 17.5h11"/><path d="M3 9.5V6.5h3M3 14.5v3h3M21 9.5V6.5h-3M21 14.5v3h-3"/><path d="M9.5 6.5v11M14.5 6.5v11"/></svg>
+              <span style="color: #CCFF00;">JAKE MORRISON</span>
+            </div>
+            <div class="showcase-card__hover">
+              <span>View Demo</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+          </div>
+          <div class="showcase-card__info">
+            <span class="showcase-card__type">Personal Trainer &bull; Growth Package</span>
+            <h3 class="showcase-card__name">Jake Morrison Fitness</h3>
+            <p class="showcase-card__desc">Bold, high-energy design. Services, pricing, testimonials, and booking integration.</p>
+          </div>
+        </a>
+
+        <!-- Salon Demo -->
+        <a href="showcases/salon.html" class="showcase-card" data-project="salon">
+          <div class="showcase-card__preview" style="background: linear-gradient(135deg, #F5E6E0 0%, #e8d1ca 40%, #C4919B 100%);">
+            <div class="showcase-card__badge showcase-card__badge--demo">Demo</div>
+            <div class="showcase-card__brand">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5"><path d="M6 3v18M18 3v18"/><path d="M6 8c3 0 5 2 6 5 1-3 3-5 6-5"/><path d="M6 16c3 0 5-2 6-5 1 3 3 5 6 5"/></svg>
+              <span style="color: #333;">MAISON HAIR</span>
+            </div>
+            <div class="showcase-card__hover">
+              <span>View Demo</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+          </div>
+          <div class="showcase-card__info">
+            <span class="showcase-card__type">Hair Salon &bull; Starter Package</span>
+            <h3 class="showcase-card__name">Maison Hair Studio</h3>
+            <p class="showcase-card__desc">Soft, luxurious aesthetic. Price list, gallery, testimonials, and appointment booking.</p>
+          </div>
+        </a>
+
+        <!-- Trades Demo -->
+        <a href="showcases/trades.html" class="showcase-card" data-project="trades">
+          <div class="showcase-card__preview" style="background: linear-gradient(135deg, #1B3A5C 0%, #15304d 50%, #0f2238 100%);">
+            <div class="showcase-card__badge showcase-card__badge--demo">Demo</div>
+            <div class="showcase-card__brand">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <span style="color: #FF6B35;">D. COOPER</span>
+            </div>
+            <div class="showcase-card__hover">
+              <span>View Demo</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+          </div>
+          <div class="showcase-card__info">
+            <span class="showcase-card__type">Plumber &bull; Growth Package</span>
+            <h3 class="showcase-card__name">D. Cooper Plumbing &amp; Heating</h3>
+            <p class="showcase-card__desc">Clean, trustworthy design. Services, trust badges, service areas, and callback requests.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- CTA for more work -->
+      <div class="work__cta">
+        <p class="work__cta-text">Like what you see? Let's build yours.</p>
+        <a href="#contact" class="work__cta-btn">
+          <span>Start Your Project</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scrolling marquee -->
+    <div class="marquee">
+      <div class="marquee__inner">
+        <span>Web Design</span><span class="marquee__dot"></span>
+        <span>Local SEO</span><span class="marquee__dot"></span>
+        <span>Lead Generation</span><span class="marquee__dot"></span>
+        <span>Responsive Design</span><span class="marquee__dot"></span>
+        <span>Conversion Optimisation</span><span class="marquee__dot"></span>
+        <span>Hosting &amp; Domains</span><span class="marquee__dot"></span>
+        <span>Speed Optimisation</span><span class="marquee__dot"></span>
+        <span>Web Design</span><span class="marquee__dot"></span>
+        <span>Local SEO</span><span class="marquee__dot"></span>
+        <span>Lead Generation</span><span class="marquee__dot"></span>
+        <span>Responsive Design</span><span class="marquee__dot"></span>
+        <span>Conversion Optimisation</span><span class="marquee__dot"></span>
+        <span>Hosting &amp; Domains</span><span class="marquee__dot"></span>
+        <span>Speed Optimisation</span><span class="marquee__dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider: Showcases → About -->
+  <div class="divider divider--3">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,120 C480,0 960,80 1440,20 L1440,0 L0,0 Z" fill="#050a05"/>
+      <path d="M0,120 C480,40 960,100 1440,60 L1440,120 L0,120 Z" fill="#f5f0e8"/>
+    </svg>
+  </div>
+
+  <!-- ========================================
+       SECTION 4: ABOUT — Warm Editorial Theme
+       Font: Playfair Display (serif, editorial)
+       Palette: #f5f0e8, #2d2926, #c4956a, #8b7355
+       ======================================== -->
+  <section class="about" id="about">
+    <div class="about__container">
+      <div class="about__header">
+        <span class="section-tag section-tag--warm">03 — Who We Are</span>
+        <h2 class="about__title">The <em>person</em> behind<br>the pixels</h2>
+      </div>
+
+      <div class="about__content">
+        <div class="about__story">
+          <div class="about__story-block">
+            <p class="about__lead">I'm Ben Gill &mdash; a designer, developer, and digital strategist passionate about helping businesses stand out online.</p>
+            <p class="about__text">Gill Media was born from a belief that every business, no matter its size, deserves a digital presence that truly represents them. I combine creative design with technical expertise to deliver websites and marketing strategies that don't just look incredible &mdash; they drive real results. When you work with me, you get dedicated, personal attention from start to finish.</p>
+          </div>
+
+          <div class="about__values">
+            <div class="about__value">
+              <div class="about__value-number">I</div>
+              <h4 class="about__value-title">Craft Over Convention</h4>
+              <p class="about__value-text">Every pixel is intentional. I don't use templates &mdash; I create bespoke solutions tailored to your brand.</p>
+            </div>
+            <div class="about__value">
+              <div class="about__value-number">II</div>
+              <h4 class="about__value-title">Results, Not Vanity</h4>
+              <p class="about__value-text">Beautiful design means nothing without performance. Every decision I make is backed by data and strategy.</p>
+            </div>
+            <div class="about__value">
+              <div class="about__value-number">III</div>
+              <h4 class="about__value-title">Your Success Is My Success</h4>
+              <p class="about__value-text">I'm not a faceless agency. I'm a dedicated partner invested in your growth, with direct communication every step of the way.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__visual">
+          <div class="about__image-stack">
+            <div class="about__image-frame about__image-frame--1">
+              <div class="about__image-placeholder" style="background: linear-gradient(135deg, #c4956a 0%, #8b7355 100%);">
+                <span>The Founder</span>
+              </div>
+            </div>
+            <div class="about__image-frame about__image-frame--2">
+              <div class="about__image-placeholder" style="background: linear-gradient(135deg, #2d2926 0%, #5a4f4a 100%); color: #f5f0e8;">
+                <span>At Work</span>
+              </div>
+            </div>
+          </div>
+          <div class="about__experience">
+            <span class="about__experience-number">&infin;</span>
+            <span class="about__experience-text">Passion for<br>crafting digital<br>excellence</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Gill Media -->
+      <div class="testimonial">
+        <div class="testimonial__quote">
+          <svg class="testimonial__icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <blockquote class="testimonial__text">"With Gill Media, you're not just another client on a list. You get a dedicated creative partner who genuinely cares about your business and treats every project as if it were their own."</blockquote>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar" style="background: linear-gradient(135deg, #c4956a, #8b7355);">BG</div>
+            <div>
+              <div class="testimonial__name">Ben Gill</div>
+              <div class="testimonial__role">Founder, Gill Media</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider: About → Contact -->
+  <div class="divider divider--4">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,0 L1440,0 L1440,100 C960,20 480,80 0,40 Z" fill="#f5f0e8"/>
+    </svg>
+  </div>
+
+  <!-- ========================================
+       SECTION 5: CONTACT — Aurora Theme
+       Font: Inter (clean, professional)
+       Palette: gradient #ff5ea0 → #ffaa50 → #00e5ff, glass morphism
+       ======================================== -->
+  <section class="contact" id="contact">
+    <div class="contact__bg">
+      <div class="contact__shape contact__shape--1"></div>
+      <div class="contact__shape contact__shape--2"></div>
+      <div class="contact__shape contact__shape--3"></div>
+      <div class="contact__shape contact__shape--4"></div>
+    </div>
+
+    <div class="contact__container">
+      <div class="contact__header">
+        <span class="section-tag section-tag--light">04 — Get In Touch</span>
+        <h2 class="contact__title">Ready to build<br>something <span class="contact__title-gradient">extraordinary</span>?</h2>
+        <p class="contact__subtitle">Tell us about your project. We'll get back to you within 24 hours with a tailored plan.</p>
+      </div>
+
+      <div class="contact__body">
+        <form class="contact__form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Your Name</label>
+              <input type="text" id="contactName" name="name" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" name="email" placeholder="john@company.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactCompany">Company</label>
+              <input type="text" id="contactCompany" name="company" placeholder="Your Company">
+            </div>
+            <div class="form-group">
+              <label for="contactBudget">Interested In</label>
+              <select id="contactBudget" name="budget">
+                <option value="" disabled selected>Select a package</option>
+                <option value="starter">Starter &mdash; &pound;299</option>
+                <option value="growth">Growth &mdash; &pound;699</option>
+                <option value="pro">Pro &mdash; &pound;1,199</option>
+                <option value="custom">Custom / Not Sure Yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Tell Us About Your Project</label>
+            <textarea id="contactMessage" name="message" rows="5" placeholder="What are your goals? What challenges are you facing?" required></textarea>
+          </div>
+          <button type="submit" class="contact__submit">
+            <span>Send Message</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <div class="contact__info">
+          <div class="contact__info-card">
+            <h4>Email</h4>
+            <a href="mailto:info@gillmedia.net">info@gillmedia.net</a>
+          </div>
+          <div class="contact__info-card">
+            <h4>Location</h4>
+            <p>United Kingdom</p>
+          </div>
+          <div class="contact__socials">
+            <a href="#" class="contact__social" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="X / Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">GILL<span>MEDIA</span></span>
+          <p class="footer__tagline">Crafting digital experiences that drive growth.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#services">Services</a>
+          <a href="#work">Showcases</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Gill Media. All rights reserved.</p>
+        <p>Designed & built with precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

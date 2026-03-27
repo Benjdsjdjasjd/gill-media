@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vikings – Phil's Quick Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #f0f2f8; color: #1a1a2e; line-height: 1.7;
+    }
+
+    /* ─── Layout ─── */
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* ─── Header ─── */
+    .brand-header {
+      background: #14194b; color: white; padding: 1.5rem 2rem;
+      display: flex; align-items: center; gap: 1rem; border-bottom: 4px solid #fde900;
+    }
+    .brand-header img { width: 56px; height: 56px; object-fit: contain; }
+    .brand-header h1 {
+      font-family: Oswald, sans-serif; font-size: 1.5rem; text-transform: uppercase;
+      color: #fde900; letter-spacing: 1px; line-height: 1.2;
+    }
+    .brand-header p { color: rgba(255,255,255,.7); font-size: .9rem; }
+
+    /* ─── Section headers ─── */
+    h2 {
+      font-family: Oswald, sans-serif; font-size: 1.2rem; text-transform: uppercase;
+      letter-spacing: .5px; color: #14194b; margin: 2rem 0 1rem;
+      padding-bottom: .4rem; border-bottom: 3px solid #fde900;
+    }
+
+    /* ─── Steps ─── */
+    .steps { display: flex; flex-direction: column; gap: .75rem; }
+    .step {
+      display: grid; grid-template-columns: 44px 1fr;
+      background: white; border-radius: 10px; border: 1px solid #dde2f0;
+      overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .step-num {
+      background: #14194b; color: #fde900; font-family: Oswald, sans-serif;
+      font-weight: 700; font-size: 1.2rem; display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .step-body { padding: .9rem 1rem; }
+    .step-body strong { display: block; color: #14194b; font-size: 1rem; margin-bottom: .15rem; }
+    .step-body p, .step-body ul { color: #444; font-size: .93rem; }
+    .step-body ul { padding-left: 1.2rem; margin-top: .3rem; }
+    .step-body li { margin-bottom: .2rem; }
+
+    /* ─── Chips / badges ─── */
+    code {
+      background: #e8eaf5; color: #14194b; padding: .1rem .4rem;
+      border-radius: 4px; font-size: .88rem; font-family: monospace;
+    }
+    .badge {
+      display: inline-block; font-family: Oswald, sans-serif; font-weight: 600;
+      font-size: .8rem; text-transform: uppercase; letter-spacing: .4px;
+      padding: .15rem .5rem; border-radius: 4px;
+    }
+    .win  { background: #c6efce; color: #276221; }
+    .loss { background: #ffc7ce; color: #9c0006; }
+    .draw { background: #fff2cc; color: #7d6608; }
+
+    /* ─── Table ─── */
+    .example-table {
+      width: 100%; border-collapse: collapse; font-size: .88rem;
+      background: white; border-radius: 10px; overflow: hidden;
+      border: 1px solid #dde2f0; margin: 1rem 0;
+    }
+    .example-table th {
+      background: #14194b; color: #fde900; padding: .6rem .75rem;
+      text-align: left; font-family: Oswald, sans-serif;
+      text-transform: uppercase; letter-spacing: .4px; font-size: .82rem;
+    }
+    .example-table td {
+      padding: .55rem .75rem; border-bottom: 1px solid #eef0f8;
+    }
+    .example-table tr:last-child td { border-bottom: none; }
+    .example-table tr:nth-child(even) td { background: #f8f9fc; }
+    .note { color: #888; font-style: italic; }
+
+    /* ─── Callout boxes ─── */
+    .callout {
+      border-radius: 10px; padding: 1rem 1.2rem; margin: 1rem 0;
+      font-size: .93rem; border-left: 5px solid;
+    }
+    .callout.green  { background: #d4edda; border-color: #28a745; }
+    .callout.yellow { background: #fff8d6; border-color: #fde900; }
+    .callout.blue   { background: #e7f1ff; border-color: #4a90d9; }
+    .callout.red    { background: #fde8e8; border-color: #dc3545; }
+    .callout .title { font-weight: 600; margin-bottom: .3rem; font-size: .95rem; }
+
+    /* ─── Sheet link button ─── */
+    .sheet-link {
+      display: inline-block; background: #14194b; color: #fde900;
+      font-family: Oswald, sans-serif; font-weight: 600; font-size: 1rem;
+      text-transform: uppercase; letter-spacing: .5px;
+      padding: .75rem 1.5rem; border-radius: 8px; text-decoration: none;
+      margin: .75rem 0; transition: background .15s;
+    }
+    .sheet-link:hover { background: #1e2870; }
+
+    /* ─── Two-col ─── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+    .info-card {
+      background: white; border-radius: 10px; padding: 1rem;
+      border: 1px solid #dde2f0;
+    }
+    .info-card h3 {
+      font-family: Oswald, sans-serif; font-size: 1rem; text-transform: uppercase;
+      color: #14194b; margin-bottom: .5rem;
+    }
+    .info-card p { font-size: .88rem; color: #555; }
+
+    /* ─── Print ─── */
+    @media print {
+      .brand-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .step-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="brand-header">
+    <img src="assets/images/VikingsLogo.png" alt="Vikings Logo">
+    <div>
+      <h1>Vikings Basketball</h1>
+      <p>Phil's Quick Guide — Fixtures &amp; Standings System</p>
+    </div>
+  </header>
+
+  <div class="page">
+
+    <div class="callout green">
+      <div class="title">✅ Everything is set up and ready to go</div>
+      The spreadsheet has been created, connected to the website, and is live. You don't need to do any setup.
+      Just open the sheet below and start filling in fixtures.
+    </div>
+
+    <!-- OPEN THE SHEET -->
+    <h2>Your Spreadsheet</h2>
+    <p style="color:#444; font-size:.93rem;">This is the only thing you need to bookmark. Open it to add games or record results.</p>
+
+    <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1QDKcbvsa_FJ-qJ-VcFeQPKtf8rsAXcVR6L-FBS-chd0/edit" target="_blank" rel="noopener">
+      📊 Open Vikings Fixtures Spreadsheet →
+    </a>
+
+    <div class="callout blue">
+      <div class="title">ℹ️ What you'll see</div>
+      The spreadsheet has three tabs at the bottom: <strong>Fixtures</strong>, <strong>Standings</strong>, and <strong>Teams</strong>.
+      You only ever need to touch the <strong>Fixtures</strong> tab. The other two update automatically.
+    </div>
+
+
+    <!-- DAY-TO-DAY USE -->
+    <h2>Day-to-Day — How to Update</h2>
+
+    <div class="two-col">
+      <div class="info-card">
+        <h3>📅 Adding an upcoming game</h3>
+        <p>Go to the <strong>Fixtures</strong> tab and add a new row. Fill in Date, Team, Opponent, Venue, and Time. Leave Score and Result blank — fill those in after the game.</p>
+      </div>
+      <div class="info-card">
+        <h3>🏆 Recording a result</h3>
+        <p>Find the game row. Type the score (e.g. <code>52-48</code>) and pick the result from the dropdown. Standings update instantly and the website refreshes within a minute.</p>
+      </div>
+    </div>
+
+    <h3 style="margin: 1.2rem 0 .5rem; color: #14194b; font-family: Oswald, sans-serif; font-size: 1rem; text-transform:uppercase;">What the columns mean</h3>
+
+    <table class="example-table">
+      <thead>
+        <tr><th>Date</th><th>Team</th><th>Opponent</th><th>Venue</th><th>Time</th><th>Score</th><th>Result</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12/04/2026</td>
+          <td>U14</td>
+          <td>Harlow Hawks</td>
+          <td>Home</td>
+          <td>18:30</td>
+          <td class="note">(leave blank)</td>
+          <td class="note">(leave blank)</td>
+        </tr>
+        <tr>
+          <td>05/04/2026</td>
+          <td>U16</td>
+          <td>Cambridge Cats</td>
+          <td>Away</td>
+          <td>19:00</td>
+          <td>52-48</td>
+          <td><span class="badge win">W</span></td>
+        </tr>
+        <tr>
+          <td>29/03/2026</td>
+          <td>Valkyries</td>
+          <td>Norwich Falcons</td>
+          <td>Home</td>
+          <td>19:00</td>
+          <td>44-61</td>
+          <td><span class="badge loss">L</span></td>
+        </tr>
+        <tr>
+          <td>22/03/2026</td>
+          <td>U12</td>
+          <td>Essex Eagles</td>
+          <td>Away</td>
+          <td>17:30</td>
+          <td>38-38</td>
+          <td><span class="badge draw">D</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout yellow">
+      <div class="title">⚡ Result dropdown</div>
+      Click the cell in the <strong>Result</strong> column and a dropdown appears automatically. Pick <strong>W</strong> (Win), <strong>L</strong> (Loss), or <strong>D</strong> (Draw). No typing needed!
+    </div>
+
+    <div class="callout yellow">
+      <div class="title">⚡ Score format</div>
+      Always enter the <strong>Vikings score first</strong>, then a dash, then the opponent's score. For example: <code>52-48</code> means Vikings scored 52, opponent scored 48.
+    </div>
+
+    <div class="callout blue">
+      <div class="title">ℹ️ Standings are fully automatic</div>
+      You <strong>never need to touch the Standings tab</strong>. Every time you add a result in the Fixtures tab,
+      the standings recalculate automatically. The website picks up the changes within a minute or two.
+    </div>
+
+    <div class="callout red">
+      <div class="title">⚠️ Don't change the Standings or Teams tabs</div>
+      These are managed automatically. If you edit them manually the auto-calculation may overwrite your changes.
+      Everything goes through the <strong>Fixtures</strong> tab.
+    </div>
+
+
+    <!-- ADDING TEAMS -->
+    <h2>Adding a New Team or League</h2>
+    <p style="font-size:.93rem; color:#444; margin-bottom:.5rem;">
+      The spreadsheet already has teams set up for: <strong>U12, U14, U16, U18, and Valkyries</strong>.
+      If you need to add a new team (e.g. U10 or a men's team), ask Ben — it's a quick change in the script.
+    </p>
+
+
+    <!-- TROUBLESHOOTING -->
+    <h2>If Something Doesn't Look Right</h2>
+
+    <table class="example-table">
+      <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>Website shows old data</td><td>Wait 1–2 minutes — the site refreshes automatically. Try a hard refresh (Ctrl+Shift+R or Cmd+Shift+R on Mac).</td></tr>
+        <tr><td>Standings didn't update after a result</td><td>In the sheet, click the <strong>🏀 Vikings</strong> menu at the top → <strong>Recalculate Standings</strong>.</td></tr>
+        <tr><td>Score shows wrong team ahead</td><td>Remember: always enter Vikings score first — e.g. <code>52-48</code> not <code>48-52</code>.</td></tr>
+        <tr><td>A team isn't in the dropdown</td><td>Ask Ben — new teams need to be added to the script.</td></tr>
+        <tr><td>Something looks completely wrong on the website</td><td>Ask Ben.</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:2rem; color:#888; font-size:.85rem; text-align:center;">
+      Built for Stortford Vikings Basketball Club — Season 2025–26<br>
+      Questions? Ask Ben.
+    </p>
+
+  </div>
+</body>
+</html>

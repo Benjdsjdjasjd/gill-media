@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Setup Guide – Vikings Fixtures System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 2rem;
+      font-family: Inter, system-ui, sans-serif;
+      background: #f8f9fa; color: #1a1a2e;
+      line-height: 1.7; max-width: 800px; margin-inline: auto;
+    }
+    h1, h2, h3 { font-family: Oswald, sans-serif; text-transform: uppercase; }
+    h1 { color: #14194b; border-bottom: 4px solid #fde900; padding-bottom: .5rem; }
+    h2 { color: #14194b; margin-top: 2.5rem; }
+    h3 { color: #333; }
+    .step {
+      background: #fff; border: 1px solid #ddd; border-radius: 12px;
+      padding: 1.5rem; margin: 1rem 0; position: relative;
+      border-left: 4px solid #fde900;
+    }
+    .step.done {
+      border-left-color: #28a745; opacity: .85;
+    }
+    .step-number {
+      background: #14194b; color: #fde900; font-family: Oswald, sans-serif;
+      font-weight: 700; font-size: 1.1rem; display: inline-flex;
+      align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%;
+      margin-right: .5rem; vertical-align: middle;
+    }
+    .step.done .step-number { background: #28a745; color: white; }
+    .done-badge {
+      float: right; background: #28a745; color: white;
+      font-size: .75rem; font-family: Oswald, sans-serif; text-transform: uppercase;
+      padding: .15rem .5rem; border-radius: 4px; letter-spacing: .3px;
+    }
+    code {
+      background: #e8e8f0; padding: .15rem .4rem; border-radius: 4px;
+      font-size: .9rem; color: #14194b;
+    }
+    .id-block {
+      background: #e8e8f0; border-radius: 6px; padding: .6rem 1rem;
+      font-family: monospace; font-size: .88rem; word-break: break-all;
+      margin: .5rem 0;
+    }
+    .id-block strong { color: #14194b; }
+    table {
+      width: 100%; border-collapse: collapse; margin: 1rem 0;
+      font-size: .9rem;
+    }
+    th {
+      background: #14194b; color: #fde900; padding: .6rem .5rem;
+      text-align: left; font-family: Oswald, sans-serif;
+      text-transform: uppercase; letter-spacing: .5px;
+    }
+    td {
+      padding: .5rem; border-bottom: 1px solid #ddd;
+    }
+    tr:nth-child(even) td { background: #f3f3f8; }
+    .warning {
+      background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px;
+      padding: 1rem; margin: 1rem 0;
+    }
+    .success {
+      background: #d4edda; border: 1px solid #28a745; border-radius: 8px;
+      padding: 1rem; margin: 1rem 0;
+    }
+    .tip {
+      background: #e7f1ff; border: 1px solid #4a90d9; border-radius: 8px;
+      padding: 1rem; margin: 1rem 0;
+    }
+    ul li { margin-bottom: .4rem; }
+    a { color: #14194b; }
+  </style>
+</head>
+<body>
+
+  <h1>Vikings Fixtures System — Setup Guide</h1>
+  <p>Technical reference for the Google Sheets + website integration. The initial setup has been completed — this document records what was done and how to maintain it going forward.</p>
+
+  <div class="success">
+    <strong>✅ Status: Live and connected.</strong> The Google Sheet is published, the Sheet ID is wired into <code>data-manager.js</code>, and the website is reading live fixture data. No further setup is needed.
+  </div>
+
+
+  <h2>Current Configuration</h2>
+
+  <table>
+    <tr><th>Item</th><th>Value / Status</th></tr>
+    <tr><td>Spreadsheet name</td><td>Vikings Fixtures 2025-26</td></tr>
+    <tr><td>Sheet URL</td><td><a href="https://docs.google.com/spreadsheets/d/1QDKcbvsa_FJ-qJ-VcFeQPKtf8rsAXcVR6L-FBS-chd0/edit" target="_blank" rel="noopener">Open in Google Sheets →</a></td></tr>
+    <tr><td>Sheet ID (in data-manager.js)</td><td><code>1QDKcbvsa_FJ-qJ-VcFeQPKtf8rsAXcVR6L-FBS-chd0</code></td></tr>
+    <tr><td>Published to web</td><td>✅ Yes — Entire Document</td></tr>
+    <tr><td>Sharing</td><td>✅ Anyone with the link — Viewer</td></tr>
+    <tr><td>Apps Script</td><td>✅ Installed and running (VikingsSheetSetup.gs)</td></tr>
+    <tr><td>Auto-standings trigger</td><td>✅ onEdit() trigger active — updates on every result entry</td></tr>
+  </table>
+
+
+  <h2>What Was Set Up (Completed Steps)</h2>
+
+  <div class="step done">
+    <span class="done-badge">✓ Done</span>
+    <h3><span class="step-number">1</span> Google Sheet created</h3>
+    <p>A new Google Sheet named <strong>Vikings Fixtures 2025-26</strong> was created under the club Google account.</p>
+  </div>
+
+  <div class="step done">
+    <span class="done-badge">✓ Done</span>
+    <h3><span class="step-number">2</span> Apps Script installed and run</h3>
+    <p>The script <code>VikingsSheetSetup.gs</code> was pasted into Extensions → Apps Script and <code>setupVikingsSheet()</code> was executed. This automatically created:</p>
+    <ul>
+      <li><strong>Fixtures tab</strong> — with headers, column widths, Team/Venue/Result dropdowns, conditional formatting (green W, red L, amber D), and a sample row</li>
+      <li><strong>Standings tab</strong> — auto-calculated from Fixtures data; Phil should never edit this manually</li>
+      <li><strong>Teams tab</strong> — auto-populated with U12, U14, U16, U18, and Valkyries</li>
+      <li><strong>🏀 Vikings custom menu</strong> — appears in the Google Sheets menu bar for manual recalculation</li>
+      <li><strong>onEdit() trigger</strong> — automatically recalculates standings every time a Score or Result cell is edited</li>
+    </ul>
+  </div>
+
+  <div class="step done">
+    <span class="done-badge">✓ Done</span>
+    <h3><span class="step-number">3</span> Sheet published to web</h3>
+    <p>File → Share → Publish to web → Entire Document → Publish. This allows the website to fetch data via the Google Visualization API without authentication.</p>
+  </div>
+
+  <div class="step done">
+    <span class="done-badge">✓ Done</span>
+    <h3><span class="step-number">4</span> Sharing set to "Anyone with the link"</h3>
+    <p>The Share button → General access → Anyone with the link → Viewer. Required for the gviz API endpoint to be publicly readable.</p>
+  </div>
+
+  <div class="step done">
+    <span class="done-badge">✓ Done</span>
+    <h3><span class="step-number">5</span> Sheet ID wired into data-manager.js</h3>
+    <p>The Sheet ID was copied from the URL and pasted into <code>site/data-manager.js</code>:</p>
+    <div class="id-block"><strong>const SHEET_ID = '1QDKcbvsa_FJ-qJ-VcFeQPKtf8rsAXcVR6L-FBS-chd0';</strong></div>
+    <p>The website now reads live data on every page load.</p>
+  </div>
+
+
+  <h2>How Data Flows</h2>
+
+  <div class="tip">
+    <strong>Architecture:</strong> Phil fills in the <strong>Fixtures tab</strong> → the Apps Script <code>onEdit()</code> trigger fires → <strong>Standings tab</strong> recalculates → the website fetches both tabs via the Google Visualization API endpoint (<code>/gviz/tq?sheet=...&tqx=out:json</code>) → <code>data-manager.js</code> parses the JSON and passes it to the render functions in <code>app.js</code>.
+  </div>
+
+  <div class="warning">
+    <strong>CORS note:</strong> The Google Visualization API endpoint has CORS restrictions that block requests from <code>localhost</code>. The site will show sample/fallback data during local development — this is expected behaviour. On a deployed domain (Netlify, GitHub Pages, etc.) it works correctly.
+  </div>
+
+
+  <h2>How to Add/Update Fixtures (Phil's job)</h2>
+
+  <h3>Adding a new fixture</h3>
+  <p>Go to the <code>Fixtures</code> tab and add a new row. Phil selects the Team from a dropdown — no free-typing needed.</p>
+  <table>
+    <tr><th>Date</th><th>Team</th><th>Opponent</th><th>Venue</th><th>Time</th><th>Score</th><th>Result</th></tr>
+    <tr><td>12/04/2026</td><td>U14</td><td>Harlow Hawks</td><td>Home</td><td>18:30</td><td></td><td></td></tr>
+  </table>
+  <p>Leave <strong>Score</strong> and <strong>Result</strong> blank for upcoming games.</p>
+
+  <h3>Recording a result</h3>
+  <p>Find the fixture row and fill in Score (e.g. <code>52-48</code>) and select Result from the dropdown (W / L / D). Standings recalculate automatically.</p>
+
+  <div class="tip">
+    <strong>Score format:</strong> Vikings score first — <code>52-48</code> means Vikings 52, opponent 48.
+  </div>
+
+  <div class="tip">
+    <strong>Standings tab:</strong> Phil never needs to touch this. It is fully managed by the Apps Script. If standings look stale, Phil can use the <strong>🏀 Vikings → Recalculate Standings</strong> menu option.
+  </div>
+
+
+  <h2>Adding a New Team or League</h2>
+  <p>Teams are defined in the <code>CONFIG</code> block at the top of <code>VikingsSheetSetup.gs</code>. To add a new team:</p>
+  <ol style="margin: .75rem 0 .75rem 1.5rem;">
+    <li>Open the sheet → Extensions → Apps Script</li>
+    <li>Find the <code>teams: [...]</code> array in the <code>CONFIG</code> block</li>
+    <li>Add a new object following the same format: <code>{ name: 'U10', league: 'U10 East Herts League' }</code></li>
+    <li>Save and run <code>setupVikingsSheet</code> again — it will add the new team to the Fixtures dropdown and Teams tab</li>
+  </ol>
+
+  <div class="warning">
+    <strong>Note:</strong> Re-running <code>setupVikingsSheet</code> will clear and rebuild the Fixtures tab headers and dropdowns but will not delete existing fixture rows.
+  </div>
+
+
+  <h2>Quick Reference</h2>
+
+  <table>
+    <tr><th>I want to…</th><th>Go to…</th><th>Do this…</th></tr>
+    <tr><td>Add an upcoming game</td><td>Fixtures tab</td><td>Add a row with date, team, opponent, venue, time. Leave score + result blank.</td></tr>
+    <tr><td>Record a result</td><td>Fixtures tab</td><td>Find the game row, type the score (e.g. 52-48) and select W/L/D from the dropdown.</td></tr>
+    <tr><td>Force-recalculate standings</td><td>Google Sheets menu</td><td>Click <strong>🏀 Vikings → Recalculate Standings</strong>.</td></tr>
+    <tr><td>Add a new team</td><td>Apps Script (VikingsSheetSetup.gs)</td><td>Add entry to CONFIG teams array, re-run setupVikingsSheet.</td></tr>
+    <tr><td>Open the sheet</td><td>—</td><td><a href="https://docs.google.com/spreadsheets/d/1QDKcbvsa_FJ-qJ-VcFeQPKtf8rsAXcVR6L-FBS-chd0/edit" target="_blank">Click here →</a></td></tr>
+  </table>
+
+
+  <h2>Troubleshooting</h2>
+
+  <table>
+    <tr><th>Problem</th><th>Fix</th></tr>
+    <tr><td>Website shows sample data (not live)</td><td>Check you're on a deployed domain, not localhost. If deployed, verify the sheet is still Published to web and shared as "Anyone with the link".</td></tr>
+    <tr><td>Data doesn't appear after a change</td><td>Wait 1–2 minutes. The gviz endpoint has a short cache. Hard-refresh the browser (Ctrl+Shift+R).</td></tr>
+    <tr><td>Standings didn't update after a result</td><td>Use <strong>🏀 Vikings → Recalculate Standings</strong> in the sheet menu to force a recalculation.</td></tr>
+    <tr><td>Wrong dates showing</td><td>Google Sheets date format works automatically. If pasting dates manually, use DD/MM/YYYY or YYYY-MM-DD format.</td></tr>
+    <tr><td>Team filter doesn't show a team</td><td>The team may not be in the Teams tab. Re-run setupVikingsSheet after adding it to the CONFIG.</td></tr>
+    <tr><td>Standings look wrong</td><td>Check that team names in Fixtures match exactly (e.g. "U14" not "Under 14"). The script is case-sensitive.</td></tr>
+  </table>
+
+  <div class="success">
+    <strong>That's it.</strong> The system is live and self-maintaining. Phil fills in one tab — the website handles everything else automatically.
+  </div>
+
+</body>
+</html>

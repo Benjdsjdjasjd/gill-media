@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Trial – Stortford Vikings Basketball Club</title>
+  <meta name="description" content="Join the Stortford Vikings — book a trial session for community, squad, or Valkyries programmes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/VikingsLogo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Stortford Vikings home">
+        <img src="assets/images/VikingsLogo.png" alt="Stortford Vikings logo">
+        <span>Vikings</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#sessions">Sessions</a>
+        <a href="index.html#fixtures">Fixtures</a>
+        <a href="standings.html">Standings</a>
+        <a href="our-journey.html">Our Journey</a>
+        <a href="index.html#coaches">Coaches</a>
+        <a href="index.html#news">News</a>
+        <a href="get-involved.html" class="join-btn">Book a Trial</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="section">
+      <div class="container">
+        <div class="gi-hero">
+          <img class="gi-logo" src="assets/images/VikingsLogo.png" alt="Stortford Vikings logo">
+          <div>
+            <h1>Book a <span class="text-yellow">Trial</span></h1>
+            <p class="muted">Players, parents, coaches, volunteers, sponsors — whoever you are, we'd love to hear from you. Fill out the form below and we'll be in touch to get you started.</p>
+          </div>
+        </div>
+
+        <!-- Programme info -->
+        <div class="programme-grid mb-1">
+          <div class="card" style="border-top: 3px solid var(--yellow);">
+            <h3 class="text-yellow">Community Sessions</h3>
+            <p class="muted small">Ages 7–14. No experience needed. Skills, footwork, ball-handling, shooting, and small-sided games.</p>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--yellow);">
+            <h3 class="text-yellow">Squad Programme</h3>
+            <p class="muted small">Ages 10+. Trial selection required. Team systems, S&amp;C, game IQ, and competitive fixtures.</p>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--yellow);">
+            <h3 class="text-yellow">Valkyries (Girls)</h3>
+            <p class="muted small">Ages 7+. All abilities welcome. Building confidence, friendships, and a love for the game.</p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="getInvolvedForm" class="card gi-form" novalidate>
+          <h2>Your Details</h2>
+          <div class="gi-grid">
+            <label>
+              Parent / Guardian Name
+              <input name="parentName" autocomplete="name" required>
+            </label>
+            <label>
+              Player Name
+              <input name="playerName" required>
+            </label>
+            <label>
+              Date of Birth
+              <input name="dob" type="date" required>
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label>
+              Phone
+              <input name="phone" type="tel" placeholder="+44...">
+            </label>
+            <label>
+              Session Interest
+              <select name="session" required>
+                <option value="">Select a programme</option>
+                <option>Community (Ages 7–14)</option>
+                <option>Squad (Ages 10+)</option>
+                <option>Valkyries (Girls 7+)</option>
+              </select>
+            </label>
+            <label>
+              Experience Level
+              <select name="experience">
+                <option value="">Select</option>
+                <option>None — complete beginner</option>
+                <option>Some — played casually</option>
+                <option>Club Level — played competitively</option>
+              </select>
+            </label>
+            <label>
+              I am a…
+              <select name="role" required>
+                <option value="">Select</option>
+                <option>Player</option>
+                <option>Parent / Guardian</option>
+                <option>Coach / Volunteer</option>
+                <option>Sponsor / Partner</option>
+                <option>General Enquiry</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            Medical / Allergies (optional)
+            <textarea name="medical" rows="2" placeholder="Let us know about any medical conditions or allergies…"></textarea>
+          </label>
+          <label class="mt-1">
+            Message (optional)
+            <textarea name="message" rows="4" placeholder="Tell us a little about your enquiry…"></textarea>
+          </label>
+          <div class="gi-actions">
+            <button class="btn" type="reset">Clear</button>
+            <button class="btn primary" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      Thanks! Your enquiry was sent. We'll be in touch soon.
+    </div>
+
+    <!-- Contact -->
+    <section class="section alt">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact</h2>
+          <div class="contact-item">
+            <span class="contact-icon">&#9993;</span>
+            <div>
+              <strong>Email</strong>
+              <span>headcoach@stortfordvikings.co.uk</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">&#128205;</span>
+            <div>
+              <strong>Training Venue</strong>
+              <span>Birchwood High School, Bishop's Stortford</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Follow Us</h3>
+          <p class="muted">Stay up to date with fixtures and club news.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/stortfordvikings" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="https://www.facebook.com/StortfordVikings" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Bishop's Stortford Vikings Basketball Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

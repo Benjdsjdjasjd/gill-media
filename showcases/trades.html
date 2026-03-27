@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D. Cooper Plumbing & Heating | Hertfordshire's Trusted Plumber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1B3A5C;
+            --blue: #2E86DE;
+            --white: #FFFFFF;
+            --light-grey: #F5F7FA;
+            --orange: #FF6B35;
+            --orange-hover: #E55A28;
+            --dark-text: #2D3436;
+            --body-text: #555E68;
+            --navy-dark: #122840;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            line-height: 1.2;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ─── Top Bar ─── */
+        .top-bar {
+            background: var(--navy-dark);
+            padding: 8px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .top-bar a {
+            color: rgba(255,255,255,0.75);
+            transition: color 0.2s;
+        }
+        .top-bar a:hover { color: var(--white); }
+        .top-bar .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .top-bar .back-link:hover { opacity: 1; }
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .top-bar-right span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ─── Header / Nav ─── */
+        .header {
+            background: var(--white);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+        .logo-text span {
+            display: block;
+            font-weight: 500;
+            font-size: 12px;
+            color: var(--body-text);
+            letter-spacing: 0.5px;
+        }
+        .nav { display: flex; align-items: center; gap: 30px; }
+        .nav a {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark-text);
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav a:hover { color: var(--blue); }
+        .nav-cta {
+            background: var(--orange);
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            transition: background 0.2s, transform 0.2s !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-cta:hover {
+            background: var(--orange-hover);
+            transform: translateY(-1px);
+            color: var(--white) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        /* ─── Hero ─── */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 40%, #0D1F33 100%);
+            padding: 90px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(46,134,222,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content { flex: 1; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 6px 16px;
+            border-radius: 50px;
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            backdrop-filter: blur(4px);
+        }
+        .hero-badge svg { flex-shrink: 0; }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 em {
+            font-style: normal;
+            color: var(--orange);
+        }
+        .hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+            max-width: 520px;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn-orange {
+            background: var(--orange);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s, transform 0.15s;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.35);
+        }
+        .btn-orange:hover {
+            background: var(--orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,53,0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid rgba(255,255,255,0.35);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+        }
+        .hero-visual {
+            flex: 0 0 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .hero-trust-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 22px 26px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .hero-trust-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(46,134,222,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .hero-trust-icon.orange { background: rgba(255,107,53,0.2); }
+        .hero-trust-icon.green { background: rgba(39,174,96,0.2); }
+        .hero-trust-text strong {
+            display: block;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .hero-trust-text span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+        }
+
+        /* ─── Services ─── */
+        .services {
+            padding: 90px 0;
+            background: var(--white);
+        }
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--body-text);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+        .section-header .section-subtitle { margin: 0 auto; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .service-card {
+            background: var(--white);
+            border: 1px solid #E8ECF1;
+            border-radius: 16px;
+            padding: 36px 28px 32px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(27,58,92,0.1);
+            border-color: transparent;
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+        .service-icon.red { background: #FFF0EB; }
+        .service-icon.blue { background: #EBF4FF; }
+        .service-icon.teal { background: #E8FFF5; }
+        .service-icon.purple { background: #F0EBFF; }
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 14px;
+            color: var(--body-text);
+            line-height: 1.65;
+        }
+        .service-card .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--blue);
+            transition: gap 0.2s;
+        }
+        .service-card:hover .learn-more { gap: 9px; }
+
+        /* ─── Why Choose Us ─── */
+        .trust {
+            padding: 90px 0;
+            background: var(--light-grey);
+        }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .trust-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 44px 36px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+        }
+        .trust-card:hover { transform: translateY(-4px); }
+        .trust-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+        }
+        .trust-icon.gas { background: #EBF4FF; }
+        .trust-icon.years { background: #FFF0EB; }
+        .trust-icon.reviews { background: #FFF8EB; }
+        .trust-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+        .trust-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        .trust-card p {
+            font-size: 14px;
+            color: var(--body-text);
+            line-height: 1.65;
+        }
+
+        /* ─── Testimonial ─── */
+        .testimonial {
+            padding: 90px 0;
+            background: var(--white);
+        }
+        .testimonial-inner {
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .testimonial-stars {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 28px;
+        }
+        .testimonial-quote {
+            font-size: 22px;
+            color: var(--navy);
+            font-weight: 500;
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-style: italic;
+            position: relative;
+        }
+        .testimonial-quote::before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 80px;
+            color: var(--blue);
+            opacity: 0.15;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            line-height: 1;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--dark-text);
+            font-size: 16px;
+        }
+        .testimonial-location {
+            color: var(--body-text);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .testimonial-source {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--body-text);
+            background: var(--light-grey);
+            padding: 6px 14px;
+            border-radius: 50px;
+        }
+
+        /* ─── Service Area ─── */
+        .area {
+            padding: 70px 0;
+            background: var(--light-grey);
+        }
+        .area-inner {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .area-content { flex: 1; }
+        .area-content p {
+            font-size: 16px;
+            color: var(--body-text);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .area-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .area-tag {
+            background: var(--white);
+            border: 1px solid #E0E5EC;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            transition: all 0.2s;
+        }
+        .area-tag:hover {
+            background: var(--blue);
+            color: var(--white);
+            border-color: var(--blue);
+        }
+        .area-map {
+            flex: 0 0 340px;
+            height: 260px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid #E0E5EC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--body-text);
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        .area-map-inner {
+            text-align: center;
+        }
+        .area-map-inner svg { margin: 0 auto 10px; opacity: 0.4; }
+        .area-radius {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--navy);
+            opacity: 0.12;
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+        }
+
+        /* ─── Contact CTA ─── */
+        .contact-cta {
+            padding: 90px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .contact-cta .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .contact-cta h2 {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .contact-cta > .container > p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+        }
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 30px 24px;
+            backdrop-filter: blur(6px);
+            transition: background 0.2s;
+        }
+        .contact-card:hover { background: rgba(255,255,255,0.12); }
+        .contact-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(46,134,222,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .contact-card-icon.orange-bg { background: rgba(255,107,53,0.2); }
+        .contact-card h4 {
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .contact-card a, .contact-card p {
+            color: var(--white);
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .contact-card a:hover { color: var(--orange); }
+        .btn-callback {
+            background: var(--orange);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(255,107,53,0.3);
+        }
+        .btn-callback:hover {
+            background: var(--orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255,107,53,0.4);
+        }
+        .contact-hours {
+            margin-top: 30px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            background: #0A1929;
+            padding: 50px 0 0;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .footer-brand p {
+            color: rgba(255,255,255,0.45);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-top: 14px;
+        }
+        .footer-accreditations {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        .footer-accreditation {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.5);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .footer h4 {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.45);
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--white); }
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            color: rgba(255,255,255,0.45);
+            font-size: 14px;
+        }
+        .footer-contact-item svg { flex-shrink: 0; margin-top: 3px; opacity: 0.5; }
+        .footer-bottom {
+            padding: 22px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .footer-bottom p {
+            color: rgba(255,255,255,0.3);
+            font-size: 13px;
+        }
+        .footer-bottom a {
+            color: rgba(255,255,255,0.45);
+            transition: color 0.2s;
+        }
+        .footer-bottom a:hover { color: var(--orange); }
+        .gill-media-credit {
+            color: rgba(255,255,255,0.3);
+            font-size: 13px;
+        }
+        .gill-media-credit a {
+            color: rgba(255,255,255,0.5);
+            font-weight: 600;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 960px) {
+            .hero .container { flex-direction: column; text-align: center; }
+            .hero h1 { font-size: 36px; }
+            .hero p { margin: 0 auto 32px; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { flex: none; width: 100%; max-width: 420px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-grid { grid-template-columns: repeat(3, 1fr); }
+            .area-inner { flex-direction: column; }
+            .area-map { flex: none; width: 100%; }
+            .contact-cards { grid-template-columns: 1fr; max-width: 400px; }
+            .footer-top { grid-template-columns: repeat(2, 1fr); }
+            .nav a:not(.nav-cta) { display: none; }
+            .mobile-toggle { display: block; }
+        }
+
+        @media (max-width: 640px) {
+            .hero { padding: 60px 0 70px; }
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 16px; }
+            .btn-orange, .btn-outline { padding: 14px 24px; font-size: 14px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 28px; }
+            .contact-cta h2 { font-size: 30px; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .top-bar .container { justify-content: center; }
+            .top-bar-right { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container">
+        <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
+        <div class="top-bar-right">
+            <span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                01onal 555 0199
+            </span>
+            <span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                Mon&ndash;Sat: 7am &ndash; 9pm | Emergency 24/7
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <a href="#" class="logo">
+            <div class="logo-icon">
+                <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24">
+                    <path d="M6 2v6a2 2 0 002 2h8a2 2 0 002-2V2"/>
+                    <path d="M12 10v12"/>
+                    <path d="M8 22h8"/>
+                    <path d="M6 6h12"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                D. Cooper
+                <span>Plumbing &amp; Heating</span>
+            </div>
+        </a>
+        <nav class="nav">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#areas">Areas</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:01onal5550199" class="nav-cta">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Call Now
+            </a>
+        </nav>
+        <button class="mobile-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg width="16" height="16" fill="none" stroke="#27ae60" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Gas Safe Registered &mdash; Reg. No. 547891
+            </div>
+            <h1>Reliable Plumbing &amp; Heating <em>You Can Trust</em></h1>
+            <p>Serving Hertfordshire homes and businesses for over 20 years. From emergency callouts to full bathroom installations &mdash; we get the job done right, first time.</p>
+            <div class="hero-buttons">
+                <a href="tel:01onal5550199" class="btn-orange">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call Now
+                </a>
+                <a href="#contact" class="btn-outline">Get a Free Quote</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-trust-card">
+                <div class="hero-trust-icon">
+                    <svg width="24" height="24" fill="none" stroke="#2E86DE" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="hero-trust-text">
+                    <strong>Gas Safe Registered</strong>
+                    <span>Fully certified &amp; insured</span>
+                </div>
+            </div>
+            <div class="hero-trust-card">
+                <div class="hero-trust-icon orange">
+                    <svg width="24" height="24" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="hero-trust-text">
+                    <strong>9.8/10 on Checkatrade</strong>
+                    <span>200+ verified reviews</span>
+                </div>
+            </div>
+            <div class="hero-trust-card">
+                <div class="hero-trust-icon green">
+                    <svg width="24" height="24" fill="none" stroke="#27ae60" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <div class="hero-trust-text">
+                    <strong>24/7 Emergency Callout</strong>
+                    <span>Fast response, no call-out fee</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Our Services</div>
+            <h2 class="section-title">What We Do</h2>
+            <p class="section-subtitle">Whether it's an urgent leak or a planned renovation, we provide a full range of plumbing and heating services across Hertfordshire.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon red">
+                    <svg width="28" height="28" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <h3>Emergency Repairs</h3>
+                <p>Burst pipes, major leaks, boiler breakdowns &mdash; we're available 24/7 for emergencies. Fast response times across Hertfordshire.</p>
+                <span class="learn-more">Learn more <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon blue">
+                    <svg width="28" height="28" fill="none" stroke="#2E86DE" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24">
+                        <path d="M12 2C8 2 4 6 4 12c0 2 1 4 2 5.5V22h12v-4.5c1-1.5 2-3.5 2-5.5 0-6-4-10-8-10z"/>
+                        <path d="M9 22h6"/>
+                        <path d="M10 18h4"/>
+                    </svg>
+                </div>
+                <h3>Boiler Installation</h3>
+                <p>Gas Safe registered installation of all major boiler brands. We'll help you choose the right system and handle everything from quote to commissioning.</p>
+                <span class="learn-more">Learn more <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon teal">
+                    <svg width="28" height="28" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18"/>
+                        <path d="M9 3v6"/>
+                        <circle cx="12" cy="15" r="2"/>
+                    </svg>
+                </div>
+                <h3>Bathroom Fitting</h3>
+                <p>Complete bathroom design and installation. From modern ensuites to accessible wet rooms, we manage every detail of your project.</p>
+                <span class="learn-more">Learn more <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon purple">
+                    <svg width="28" height="28" fill="none" stroke="#7C5CFC" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24">
+                        <path d="M12 2a5 5 0 015 5c0 3-2 5-5 8-3-3-5-5-5-8a5 5 0 015-5z"/>
+                        <path d="M4 14h3l2 6h6l2-6h3"/>
+                        <path d="M7 20h10"/>
+                    </svg>
+                </div>
+                <h3>Central Heating</h3>
+                <p>Full central heating installation, repairs, and servicing. Radiator replacement, power flushing, and underfloor heating systems.</p>
+                <span class="learn-more">Learn more <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="trust" id="about">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Why Choose Us</div>
+            <h2 class="section-title">Trusted by Hertfordshire Homeowners</h2>
+            <p class="section-subtitle">We've built our reputation on honest work, fair pricing, and getting the job done properly.</p>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <div class="trust-icon gas">
+                    <svg width="36" height="36" fill="none" stroke="#2E86DE" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <div class="trust-number">547891</div>
+                <h3>Gas Safe Registered</h3>
+                <p>Fully certified to work safely on all gas appliances. Your safety is our top priority on every job.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon years">
+                    <svg width="36" height="36" fill="none" stroke="#FF6B35" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                </div>
+                <div class="trust-number">20+</div>
+                <h3>Years of Experience</h3>
+                <p>Two decades serving Hertfordshire homes. We've seen it all and fixed it all &mdash; no job too big or too small.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon reviews">
+                    <svg width="36" height="36" fill="none" stroke="#E6A817" stroke-width="1.8" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="trust-number">9.8<span style="font-size: 22px; opacity: 0.5;">/10</span></div>
+                <h3>Checkatrade Reviews</h3>
+                <p>Rated 9.8 out of 10 from over 200 verified reviews. Our customers recommend us time and again.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial -->
+<section class="testimonial">
+    <div class="container">
+        <div class="testimonial-inner">
+            <div class="testimonial-stars">
+                <svg width="22" height="22" fill="#F59E0B" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="22" height="22" fill="#F59E0B" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="22" height="22" fill="#F59E0B" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="22" height="22" fill="#F59E0B" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="22" height="22" fill="#F59E0B" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="testimonial-quote">Dave was brilliant from start to finish. We had a boiler emergency on a Sunday evening and he was here within the hour. Fixed the issue quickly, explained everything clearly, and the price was very fair. We've used D. Cooper for all our plumbing since and wouldn't go anywhere else. Highly recommend.</p>
+            <div class="testimonial-author">Sarah &amp; Mark Thompson</div>
+            <div class="testimonial-location">Bishop's Stortford</div>
+            <div class="testimonial-source">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                Verified review on Checkatrade
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Area -->
+<section class="area" id="areas">
+    <div class="container">
+        <div class="area-inner">
+            <div class="area-content">
+                <div class="section-label">Service Area</div>
+                <h2 class="section-title">Covering Hertfordshire<br>&amp; Surrounding Areas</h2>
+                <p>Based in Bishop's Stortford, we provide plumbing and heating services across East Hertfordshire and into Essex. Whether you're in town or in a rural village, we're happy to come to you.</p>
+                <div class="area-tags">
+                    <span class="area-tag">Bishop's Stortford</span>
+                    <span class="area-tag">Hertford</span>
+                    <span class="area-tag">Harlow</span>
+                    <span class="area-tag">Ware</span>
+                    <span class="area-tag">Sawbridgeworth</span>
+                    <span class="area-tag">Stansted</span>
+                    <span class="area-tag">Much Hadham</span>
+                    <span class="area-tag">Hoddesdon</span>
+                    <span class="area-tag">Broxbourne</span>
+                    <span class="area-tag">Roydon</span>
+                </div>
+            </div>
+            <div class="area-map">
+                <div class="area-map-inner">
+                    <svg width="48" height="48" fill="none" stroke="#1B3A5C" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <div style="font-weight: 600; color: var(--navy);">Based in Bishop's Stortford</div>
+                    <div style="color: var(--body-text); font-size: 13px; margin-top: 4px;">Serving a 20-mile radius</div>
+                </div>
+                <div class="area-radius">20mi</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA -->
+<section class="contact-cta" id="contact">
+    <div class="container">
+        <h2>Need a Plumber?</h2>
+        <p>Get in touch today for a free, no-obligation quote. Emergency callouts available 24/7.</p>
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="contact-card-icon">
+                    <svg width="22" height="22" fill="none" stroke="#2E86DE" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <h4>Call Us</h4>
+                <a href="tel:01onal5550199">01279 555 019</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-icon orange-bg">
+                    <svg width="22" height="22" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <h4>Email</h4>
+                <a href="mailto:dave@dcooperplumbing.co.uk" style="font-size: 15px;">dave@dcooperplumbing.co.uk</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-icon">
+                    <svg width="22" height="22" fill="none" stroke="#2E86DE" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h4>Hours</h4>
+                <p style="font-size: 15px;">Mon&ndash;Sat 7am&ndash;9pm</p>
+            </div>
+        </div>
+        <a href="#" class="btn-callback">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Request a Callback
+        </a>
+        <div class="contact-hours">Emergency callouts available 24 hours a day, 7 days a week</div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="margin-bottom: 4px;">
+                    <div class="logo-icon" style="width: 36px; height: 36px; border-radius: 8px;">
+                        <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24">
+                            <path d="M6 2v6a2 2 0 002 2h8a2 2 0 002-2V2"/>
+                            <path d="M12 10v12"/>
+                            <path d="M8 22h8"/>
+                            <path d="M6 6h12"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text" style="font-size: 17px; color: #fff;">
+                        D. Cooper
+                        <span style="color: rgba(255,255,255,0.4);">Plumbing &amp; Heating</span>
+                    </div>
+                </a>
+                <p>Professional plumbing and heating services for homes and businesses across Hertfordshire. Gas Safe registered, fully insured, and committed to quality workmanship.</p>
+                <div class="footer-accreditations">
+                    <div class="footer-accreditation">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Gas Safe
+                    </div>
+                    <div class="footer-accreditation">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                        Checkatrade
+                    </div>
+                    <div class="footer-accreditation">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        CIPHE
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Emergency Repairs</a></li>
+                    <li><a href="#">Boiler Installation</a></li>
+                    <li><a href="#">Boiler Servicing</a></li>
+                    <li><a href="#">Bathroom Fitting</a></li>
+                    <li><a href="#">Central Heating</a></li>
+                    <li><a href="#">Power Flushing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Service Areas</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Get in Touch</h4>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    01279 555 019
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    dave@dcooperplumbing.co.uk
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Bishop's Stortford,<br>Hertfordshire
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 D. Cooper Plumbing &amp; Heating. All rights reserved. Company No. 08451237.</p>
+            <div class="gill-media-credit">Website by <a href="../index.html">Gill Media</a></div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

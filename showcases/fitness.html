@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Morrison Fitness | Personal Training in Hertfordshire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0D0D0D;
+            --lime: #CCFF00;
+            --dark-grey: #1A1A1A;
+            --white: #FFFFFF;
+            --grey-text: #999999;
+            --grey-border: #2A2A2A;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- UTILITY ---- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---- BACK LINK ---- */
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 24px;
+            z-index: 1000;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--grey-text);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            background: rgba(13, 13, 13, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--grey-border);
+        }
+
+        .back-link:hover {
+            color: var(--lime);
+        }
+
+        .back-link span {
+            margin-right: 6px;
+        }
+
+        /* ---- NAV ---- */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            padding: 20px 0;
+            background: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 26px;
+            letter-spacing: 0.08em;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-logo em {
+            color: var(--lime);
+            font-style: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--grey-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            background: var(--lime);
+            color: var(--black);
+            padding: 10px 24px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        /* ---- HAMBURGER (mobile) ---- */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(204, 255, 0, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--grey-border), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--lime);
+            margin-bottom: 32px;
+            padding: 8px 16px;
+            border: 1px solid rgba(204, 255, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--lime);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(56px, 10vw, 120px);
+            line-height: 0.95;
+            letter-spacing: -0.01em;
+            max-width: 900px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 .lime {
+            color: var(--lime);
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--grey-text);
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 48px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--lime);
+            color: var(--black);
+            padding: 16px 36px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(204, 255, 0, 0.15);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 16px 36px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border: 1px solid var(--grey-border);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+        }
+
+        /* ---- SERVICES ---- */
+        .services {
+            padding: 120px 0;
+            background: var(--dark-grey);
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--lime);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(40px, 6vw, 64px);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--black);
+            border: 1px solid var(--grey-border);
+            border-radius: 8px;
+            padding: 40px 32px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--lime);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(204, 255, 0, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(204, 255, 0, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        .service-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            letter-spacing: 0.04em;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--grey-text);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .service-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            color: var(--lime);
+            letter-spacing: 0.02em;
+        }
+
+        .service-price span {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: var(--grey-text);
+            font-weight: 400;
+        }
+
+        /* ---- STATS ---- */
+        .stats {
+            padding: 100px 0;
+            background: var(--black);
+            border-top: 1px solid var(--grey-border);
+            border-bottom: 1px solid var(--grey-border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            text-align: center;
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60px;
+            background: var(--grey-border);
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(56px, 8vw, 80px);
+            line-height: 1;
+            color: var(--lime);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--grey-text);
+        }
+
+        /* ---- ABOUT ---- */
+        .about {
+            padding: 120px 0;
+            background: var(--dark-grey);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            aspect-ratio: 4/5;
+            background: var(--black);
+            border-radius: 8px;
+            border: 1px solid var(--grey-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image-inner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(204, 255, 0, 0.05) 0%, transparent 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image-placeholder {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 180px;
+            color: rgba(204, 255, 0, 0.06);
+            line-height: 1;
+        }
+
+        .about-image .badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: var(--lime);
+            color: var(--black);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 0.06em;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        .about-content h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(40px, 5vw, 56px);
+            line-height: 1;
+            margin-bottom: 32px;
+        }
+
+        .about-content h2 .lime {
+            color: var(--lime);
+        }
+
+        .about-content p {
+            font-size: 16px;
+            color: var(--grey-text);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-quals {
+            list-style: none;
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .about-quals li {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .about-quals li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--lime);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ---- TESTIMONIAL ---- */
+        .testimonial {
+            padding: 120px 0;
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '\201C';
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 300px;
+            color: rgba(204, 255, 0, 0.04);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testimonial-inner {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial blockquote {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--white);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .testimonial cite {
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .testimonial cite strong {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .testimonial cite span {
+            font-size: 14px;
+            color: var(--lime);
+        }
+
+        .testimonial .stars {
+            font-size: 20px;
+            color: var(--lime);
+            letter-spacing: 4px;
+            margin-bottom: 32px;
+        }
+
+        /* ---- CTA ---- */
+        .cta-section {
+            padding: 120px 0;
+            background: var(--dark-grey);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(204, 255, 0, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(48px, 8vw, 80px);
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .cta-section h2 .lime {
+            color: var(--lime);
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--grey-text);
+            margin-bottom: 48px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .cta-contact {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .cta-contact-item {
+            text-align: center;
+        }
+
+        .cta-contact-item .label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--grey-text);
+            margin-bottom: 8px;
+        }
+
+        .cta-contact-item .value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            letter-spacing: 0.04em;
+        }
+
+        .cta-contact-item .value a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .cta-contact-item .value a:hover {
+            color: var(--lime);
+        }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            padding: 40px 0;
+            background: var(--black);
+            border-top: 1px solid var(--grey-border);
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            font-size: 13px;
+            color: var(--grey-text);
+        }
+
+        .footer-right {
+            font-size: 13px;
+            color: var(--grey-text);
+        }
+
+        .footer-right a {
+            color: var(--lime);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-right a:hover {
+            color: var(--white);
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .about-image {
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: clamp(44px, 12vw, 72px);
+            }
+
+            .hero-sub {
+                font-size: 16px;
+            }
+
+            .services {
+                padding: 80px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .stat-item:not(:last-child)::after {
+                display: none;
+            }
+
+            .about {
+                padding: 80px 0;
+            }
+
+            .about-image {
+                aspect-ratio: 3/2;
+            }
+
+            .testimonial {
+                padding: 80px 0;
+            }
+
+            .cta-section {
+                padding: 80px 0;
+            }
+
+            .cta-contact {
+                gap: 32px;
+                flex-direction: column;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .back-link {
+                top: 14px;
+                left: 14px;
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 32px 24px;
+            }
+
+            .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Link -->
+    <a href="../index.html" class="back-link"><span>&larr;</span> Back to Gill Media</a>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <a href="#" class="nav-logo">JAKE MORRISON <em>FITNESS</em></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Book Free Consultation</a>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">Now Accepting New Clients</div>
+                <h1>TRANSFORM YOUR BODY.<br><span class="lime">TRANSFORM YOUR LIFE.</span></h1>
+                <p class="hero-sub">Elite personal training in Hertfordshire. Science-backed programmes tailored to your goals, your schedule, and your life.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">
+                        Book Free Consultation
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="#services" class="btn-secondary">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-label">What I Offer</div>
+            <h2 class="section-title">SERVICES BUILT FOR RESULTS</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3>1-TO-1 PT SESSIONS</h3>
+                    <p>Fully personalised sessions designed around your goals. Every rep, every set, every session programmed specifically for you. Includes nutrition guidance and progress tracking.</p>
+                    <div class="service-price">&pound;45 <span>/ session</span></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>GROUP TRAINING</h3>
+                    <p>High-energy small group sessions (max 8 people). The motivation of a group with the attention of a personal trainer. Perfect for those who thrive on competition.</p>
+                    <div class="service-price">&pound;15 <span>/ session</span></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>ONLINE COACHING</h3>
+                    <p>Train anywhere with a bespoke programme, weekly check-ins, form video reviews, and direct message access to me. Full flexibility, zero compromise on results.</p>
+                    <div class="service-price">&pound;99 <span>/ month</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" id="results">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Clients Transformed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9&#9733;</div>
+                    <div class="stat-label">Google Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8 YRS</div>
+                    <div class="stat-label">Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-inner">
+                        <div class="about-image-placeholder">JM</div>
+                    </div>
+                    <div class="badge">EST. 2018</div>
+                </div>
+                <div class="about-content">
+                    <div class="section-label">About Me</div>
+                    <h2>NOT JUST A TRAINER.<br><span class="lime">A PARTNER IN YOUR GOALS.</span></h2>
+                    <p>I'm Jake Morrison, a Level 3 qualified personal trainer based in St Albans, Hertfordshire. After spending over a decade in competitive sports and transforming my own physique, I made it my mission to help others unlock their potential.</p>
+                    <p>I don't believe in cookie-cutter programmes or unsustainable crash diets. Every client gets a science-backed, individually tailored plan that fits their life &mdash; not the other way around. Whether you want to lose weight, build muscle, or simply feel stronger and more confident, I'll get you there.</p>
+                    <ul class="about-quals">
+                        <li>Level 3 Personal Training (CIMSPA)</li>
+                        <li>Precision Nutrition Level 1</li>
+                        <li>Certified Strength &amp; Conditioning Specialist</li>
+                        <li>First Aid Certified</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial" id="testimonials">
+        <div class="container">
+            <div class="testimonial-inner">
+                <div class="section-label">Client Results</div>
+                <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <blockquote>&ldquo;I came to Jake having never set foot in a gym. 6 months later I've lost 3 stone, I'm stronger than I've ever been, and I actually look forward to training. He completely changed my relationship with fitness.&rdquo;</blockquote>
+                <cite>
+                    <strong>Sarah Mitchell</strong>
+                    <span>Lost 3 Stone in 6 Months</span>
+                </cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-inner">
+                <div class="section-label">Let's Go</div>
+                <h2>READY TO <span class="lime">START?</span></h2>
+                <p>Your first consultation is completely free. No pressure, no hard sell &mdash; just an honest conversation about your goals and how I can help.</p>
+                <div class="cta-actions">
+                    <a href="tel:07700123456" class="btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call Now
+                    </a>
+                    <a href="https://instagram.com/jakemorrisonfitness" target="_blank" class="btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        @jakemorrisonfitness
+                    </a>
+                </div>
+                <div class="cta-contact">
+                    <div class="cta-contact-item">
+                        <div class="label">Phone</div>
+                        <div class="value"><a href="tel:07700123456">07700 123 456</a></div>
+                    </div>
+                    <div class="cta-contact-item">
+                        <div class="label">Email</div>
+                        <div class="value"><a href="mailto:jake@jakemorrisonfitness.co.uk">jake@jakemorrisonfitness.co.uk</a></div>
+                    </div>
+                    <div class="cta-contact-item">
+                        <div class="label">Location</div>
+                        <div class="value">St Albans, Hertfordshire</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-left">&copy; 2026 Jake Morrison Fitness. All rights reserved.</div>
+            <div class="footer-right">Website by <a href="/showcases">Gill Media</a></div>
+        </div>
+    </footer>
+
+</body>
+</html>

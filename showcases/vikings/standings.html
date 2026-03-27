@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>League Standings – Stortford Vikings Basketball Club</title>
+  <meta name="description" content="League tables and standings for all Stortford Vikings teams.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/VikingsLogo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Stortford Vikings home">
+        <img src="assets/images/VikingsLogo.png" alt="Stortford Vikings logo">
+        <span>Vikings</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#sessions">Sessions</a>
+        <a href="standings.html" class="active">Standings</a>
+        <a href="our-journey.html">Our Journey</a>
+        <a href="index.html#coaches">Coaches</a>
+        <a href="get-involved.html" class="join-btn">Book a Trial</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero-section" style="min-height: 280px;">
+      <div class="hero-overlay"></div>
+      <div class="container" style="position: relative; z-index: 1; padding: 3.5rem 0;">
+        <h1>League <span class="accent">Standings</span></h1>
+        <p style="max-width: 600px; color: var(--muted); font-size: 1.05rem;">Track how every Vikings team is performing across their leagues this season.</p>
+      </div>
+    </section>
+
+    <!-- Team filter -->
+    <section class="section">
+      <div class="container">
+
+        <div class="standings-controls">
+          <label class="filter-label">
+            <span>Filter by team:</span>
+            <select id="teamFilter" class="filter-select">
+              <option value="all">All Teams</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- League tables rendered here by JS -->
+        <div id="standingsContainer"></div>
+
+      </div>
+    </section>
+
+    <!-- Full Results -->
+    <section class="section alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Full Results</h2>
+          <p>Every game this season, across all teams.</p>
+        </div>
+
+        <div class="results-controls">
+          <label class="filter-label">
+            <span>Filter:</span>
+            <select id="resultsTeamFilter" class="filter-select">
+              <option value="all">All Teams</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="resultsContainer"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Bishop's Stortford Vikings Basketball Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data-manager.js"></script>
+  <script src="app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const [standings, fixtures, teams] = await Promise.all([
+        VikingsData.getStandings(),
+        VikingsData.getFixtures(),
+        VikingsData.getTeams()
+      ]);
+
+      // ── Populate team filter dropdowns ──
+      const teamNames = [...new Set(teams.map(t => t.team))];
+      const teamFilter = document.getElementById('teamFilter');
+      const resultsFilter = document.getElementById('resultsTeamFilter');
+      teamNames.forEach(name => {
+        const opt1 = new Option(name, name);
+        const opt2 = new Option(name, name);
+        teamFilter.appendChild(opt1);
+        resultsFilter.appendChild(opt2);
+      });
+
+
+      // ── Render standings ──
+      function renderStandings(filter) {
+        const container = document.getElementById('standingsContainer');
+        const grouped = VikingsData.groupStandingsByLeague(standings);
+        let html = '';
+
+        Object.entries(grouped).forEach(([league, table]) => {
+          // If filtering, only show leagues that contain the selected team
+          if (filter && filter !== 'all') {
+            const hasTeam = table.some(r =>
+              r.team.toLowerCase().includes(filter.toLowerCase()) ||
+              r.team.toLowerCase().includes('viking') ||
+              r.team.toLowerCase().includes('valkyrie')
+            );
+            if (!hasTeam) return;
+          }
+
+          html += `
+            <div class="league-table-wrap">
+              <h3 class="league-title">${league}</h3>
+              <div class="table-scroll">
+                <table class="standings-table">
+                  <thead>
+                    <tr>
+                      <th class="pos-col">#</th>
+                      <th class="team-col">Team</th>
+                      <th>P</th>
+                      <th>W</th>
+                      <th>L</th>
+                      <th>PF</th>
+                      <th>PA</th>
+                      <th>PD</th>
+                      <th class="pts-col">Pts</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+          `;
+
+          table.forEach((row, i) => {
+            const isVikings = row.team.toLowerCase().includes('viking') ||
+                              row.team.toLowerCase().includes('valkyrie') ||
+                              row.team.toLowerCase().includes('stortford');
+            const rowClass = isVikings ? 'vikings-row' : '';
+            const pdSign = row.pd > 0 ? '+' : '';
+
+            html += `
+              <tr class="${rowClass}">
+                <td class="pos-col">${i + 1}</td>
+                <td class="team-col">${isVikings ? '<strong>' + row.team + '</strong>' : row.team}</td>
+                <td>${row.p}</td>
+                <td>${row.w}</td>
+                <td>${row.l}</td>
+                <td>${row.pf}</td>
+                <td>${row.pa}</td>
+                <td class="${row.pd > 0 ? 'pd-pos' : row.pd < 0 ? 'pd-neg' : ''}">${pdSign}${row.pd}</td>
+                <td class="pts-col"><strong>${row.pts}</strong></td>
+              </tr>
+            `;
+          });
+
+          html += '</tbody></table></div></div>';
+        });
+
+        if (!html) {
+          html = '<p class="muted">No standings data available for this team.</p>';
+        }
+
+        container.innerHTML = html;
+      }
+
+      // ── Render full results ──
+      function renderResults(filter) {
+        const container = document.getElementById('resultsContainer');
+        const { past } = VikingsData.splitFixtures(fixtures);
+        const filtered = VikingsData.filterByTeam(past, filter);
+
+        if (!filtered.length) {
+          container.innerHTML = '<p class="muted">No results to show.</p>';
+          return;
+        }
+
+        let html = '<div class="results-list">';
+        filtered.forEach(f => {
+          const dateObj = new Date(f.date);
+          const dayName = dateObj.toLocaleDateString('en-GB', { weekday: 'short' });
+          const dateStr = dateObj.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+          const isHome = f.venue.toLowerCase() === 'home';
+          const resultClass = f.result === 'W' ? 'win' : f.result === 'L' ? 'loss' : f.result === 'D' ? 'draw' : '';
+
+          html += `
+            <div class="result-row">
+              <div class="result-date">${dayName} ${dateStr}</div>
+              <div class="result-teams">
+                <strong>${f.team}</strong>
+                <span class="result-vs">vs</span>
+                ${f.opponent}
+                <span class="venue-badge ${isHome ? 'home' : 'away'}">${f.venue}</span>
+              </div>
+              <div class="result-score">
+                ${f.score ? `<span class="score-badge ${resultClass}">${f.score}</span>` : '—'}
+                ${f.result ? `<span class="fx-result ${resultClass}">${f.result}</span>` : ''}
+              </div>
+            </div>
+          `;
+        });
+        html += '</div>';
+        container.innerHTML = html;
+      }
+
+      // ── Event listeners ──
+      teamFilter.addEventListener('change', e => renderStandings(e.target.value));
+      resultsFilter.addEventListener('change', e => renderResults(e.target.value));
+
+      // ── Initial render ──
+      renderStandings('all');
+      renderResults('all');
+    });
+  </script>
+</body>
+</html>

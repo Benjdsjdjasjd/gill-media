@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Tavola — Authentic Italian Dining in Bishop's Stortford</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --burgundy: #5C1018;
+            --cream: #FFF8F0;
+            --gold: #C9A96E;
+            --charcoal: #2B2B2B;
+            --burgundy-light: #7A1E28;
+            --gold-dark: #B8944D;
+            --cream-dark: #F5EDDF;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.7;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* ========== SUBTLE TEXTURE (CSS only) ========== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(201,169,110,0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(92,16,24,0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ========== UTILITY ========== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .gold-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 24px auto;
+            position: relative;
+        }
+        .gold-divider::before {
+            content: '';
+            position: absolute;
+            width: 8px; height: 8px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+            top: -4px;
+            left: 50%;
+            margin-left: -4px;
+            background: var(--cream);
+        }
+
+        /* ========== BACK LINK ========== */
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 24px;
+            z-index: 100;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.85);
+            transition: color 0.3s;
+            background: rgba(43,43,43,0.5);
+            padding: 8px 16px;
+            border-radius: 4px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .back-link:hover { color: var(--gold); }
+
+        /* ========== NAVIGATION ========== */
+        .site-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 90;
+            padding: 18px 0;
+            transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+        }
+        .site-nav.scrolled {
+            background: rgba(43,43,43,0.95);
+            padding: 12px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .nav-inner a {
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+        .nav-inner a:hover { color: var(--gold); }
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px !important;
+            letter-spacing: 3px !important;
+            color: #fff !important;
+            font-weight: 600;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            /* Simulated food photograph with rich gradient layers */
+            background:
+                linear-gradient(170deg,
+                    rgba(92,16,24,0.92) 0%,
+                    rgba(92,16,24,0.78) 30%,
+                    rgba(43,43,43,0.85) 60%,
+                    rgba(30,15,10,0.95) 100%
+                ),
+                /* Warm ambient texture */
+                radial-gradient(ellipse at 30% 40%, rgba(201,169,110,0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 60%, rgba(139,69,19,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(201,169,110,0.15) 0%, transparent 40%),
+                /* Base warm tone */
+                linear-gradient(135deg, #3D0C10 0%, #1a0a06 100%);
+            background-size: cover;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0,0,0,0.03) 2px,
+                    rgba(0,0,0,0.03) 4px
+                );
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, var(--cream), transparent);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 24px;
+        }
+        .hero-eyebrow {
+            font-size: 12px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            color: #fff;
+            font-weight: 400;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+        .hero-tagline {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255,248,240,0.75);
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+        .hero-gold-line {
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+            margin: 28px auto;
+        }
+
+        /* CTA Buttons */
+        .btn-primary {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 16px 44px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Lato', sans-serif;
+        }
+        .btn-primary:hover {
+            background: var(--gold);
+            color: var(--burgundy);
+        }
+        .btn-dark {
+            border-color: var(--burgundy);
+            color: var(--burgundy);
+        }
+        .btn-dark:hover {
+            background: var(--burgundy);
+            color: var(--cream);
+        }
+
+        /* ========== ABOUT ========== */
+        .about {
+            padding: 100px 0 90px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .about h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--burgundy);
+            margin-bottom: 8px;
+        }
+        .about-text {
+            max-width: 620px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.9;
+        }
+        .about-text em {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--burgundy);
+        }
+
+        /* ========== MENU HIGHLIGHTS ========== */
+        .menu-section {
+            padding: 80px 0 100px;
+            background:
+                linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 50%, var(--cream) 100%);
+            position: relative;
+            z-index: 1;
+        }
+        .menu-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 800px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--burgundy);
+        }
+        .section-header .subtitle {
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .menu-card {
+            background: #fff;
+            padding: 36px 32px;
+            border: 1px solid rgba(201,169,110,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 1px solid rgba(201,169,110,0.12);
+            pointer-events: none;
+        }
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(92,16,24,0.08);
+        }
+        .menu-card h3 {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .menu-card p {
+            font-size: 0.92rem;
+            color: #888;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .menu-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--burgundy);
+            font-weight: 600;
+        }
+
+        /* ========== HOURS ========== */
+        .hours-section {
+            padding: 90px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hours-table {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(201,169,110,0.15);
+            font-size: 0.95rem;
+        }
+        .hours-row:last-child { border-bottom: none; }
+        .hours-day {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            color: var(--charcoal);
+        }
+        .hours-time {
+            color: #777;
+            font-weight: 300;
+        }
+        .hours-closed {
+            color: var(--burgundy);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ========== CONTACT ========== */
+        .contact-section {
+            padding: 90px 0 100px;
+            background: var(--burgundy);
+            color: var(--cream);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(201,169,110,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 30%, rgba(255,248,240,0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .contact-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+        .contact-section .subtitle {
+            color: var(--gold);
+        }
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin: 40px 0 48px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-item h4 {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        .contact-item p {
+            font-size: 1rem;
+            color: rgba(255,248,240,0.8);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        .contact-item a {
+            color: rgba(255,248,240,0.8);
+            transition: color 0.3s;
+        }
+        .contact-item a:hover { color: var(--gold); }
+
+        .btn-light {
+            border-color: var(--gold);
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+        .btn-light:hover {
+            background: var(--gold);
+            color: var(--burgundy);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            padding: 40px 0;
+            background: var(--charcoal);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: rgba(255,248,240,0.6);
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .footer-credit {
+            font-size: 0.8rem;
+            color: rgba(255,248,240,0.35);
+            letter-spacing: 1px;
+        }
+        .footer-credit a {
+            color: var(--gold);
+            transition: opacity 0.3s;
+        }
+        .footer-credit a:hover { opacity: 0.7; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .nav-inner { gap: 20px; }
+            .nav-inner a { font-size: 11px; letter-spacing: 1.5px; }
+            .nav-brand { font-size: 15px !important; }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .menu-card { padding: 28px 24px; }
+
+            .contact-details { gap: 36px; }
+
+            .back-link {
+                top: 12px;
+                left: 12px;
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+
+            .about { padding: 70px 0 60px; }
+            .menu-section { padding: 60px 0 70px; }
+            .hours-section { padding: 60px 0; }
+            .contact-section { padding: 60px 0 70px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-inner a:not(.nav-brand) { display: none; }
+            .hero h1 { letter-spacing: 0; }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Link -->
+    <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
+
+    <!-- Navigation -->
+    <nav class="site-nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="#menu">Menu</a>
+            <a href="#hours">Hours</a>
+            <a href="#hero" class="nav-brand">Bella Tavola</a>
+            <a href="#contact">Contact</a>
+            <a href="#contact">Reserve</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Est. 2019 &middot; Bishop's Stortford</p>
+            <h1><em>Bella</em> Tavola</h1>
+            <div class="hero-gold-line"></div>
+            <p class="hero-tagline">Authentic Italian Dining in Bishop's Stortford</p>
+            <a href="#contact" class="btn-primary">Book a Table</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container fade-in">
+            <h2>Benvenuti</h2>
+            <div class="gold-divider"></div>
+            <p class="about-text">
+                At Bella Tavola, every dish tells the story of <em>la cucina italiana</em> — handed down through generations and reimagined with the finest seasonal produce. From hand-rolled pasta to wood-fired pizzas, our kitchen honours the traditions of Italy while celebrating the vibrant flavours of Hertfordshire's local suppliers. Join us for an evening you won't forget.
+            </p>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="subtitle">From Our Kitchen</p>
+                <h2>Menu Highlights</h2>
+                <div class="gold-divider"></div>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card fade-in">
+                    <h3>Truffle Risotto</h3>
+                    <p>Carnaroli rice, black truffle, aged Parmigiano-Reggiano, finished with truffle oil and crispy sage.</p>
+                    <span class="price">&pound;18</span>
+                </div>
+                <div class="menu-card fade-in">
+                    <h3>Margherita DOP</h3>
+                    <p>San Marzano tomatoes, fior di latte, fresh basil, extra virgin olive oil on our 48-hour proved dough.</p>
+                    <span class="price">&pound;14</span>
+                </div>
+                <div class="menu-card fade-in">
+                    <h3>Branzino al Forno</h3>
+                    <p>Whole roasted sea bass with Sicilian capers, cherry tomatoes, Taggiasca olives and fresh herbs.</p>
+                    <span class="price">&pound;24</span>
+                </div>
+                <div class="menu-card fade-in">
+                    <h3>Tiramis&ugrave; della Casa</h3>
+                    <p>Our signature recipe &mdash; layers of espresso-soaked savoiardi, mascarpone cream and dark cocoa.</p>
+                    <span class="price">&pound;9</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opening Hours -->
+    <section class="hours-section" id="hours">
+        <div class="container fade-in">
+            <div class="section-header">
+                <p class="subtitle" style="color: var(--gold);">Plan Your Visit</p>
+                <h2 style="color: var(--burgundy);">Opening Hours</h2>
+                <div class="gold-divider"></div>
+            </div>
+            <div class="hours-table">
+                <div class="hours-row">
+                    <span class="hours-day">Monday</span>
+                    <span class="hours-closed">Closed</span>
+                </div>
+                <div class="hours-row">
+                    <span class="hours-day">Tuesday &ndash; Thursday</span>
+                    <span class="hours-time">12:00 &ndash; 15:00 &nbsp;|&nbsp; 17:30 &ndash; 22:00</span>
+                </div>
+                <div class="hours-row">
+                    <span class="hours-day">Friday &ndash; Saturday</span>
+                    <span class="hours-time">12:00 &ndash; 15:00 &nbsp;|&nbsp; 17:30 &ndash; 23:00</span>
+                </div>
+                <div class="hours-row">
+                    <span class="hours-day">Sunday</span>
+                    <span class="hours-time">12:00 &ndash; 20:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="subtitle">We'd Love to See You</p>
+                <h2>Reserve Your Table</h2>
+                <div class="gold-divider" style="background: rgba(201,169,110,0.4);"></div>
+            </div>
+            <div class="contact-details fade-in">
+                <div class="contact-item">
+                    <h4>Address</h4>
+                    <p>14 North Street<br>Bishop's Stortford<br>Hertfordshire CM23 2LQ</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Telephone</h4>
+                    <p><a href="tel:+441onal2798654">01279 865 432</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:hello@bellatavola.co.uk">hello@bellatavola.co.uk</a></p>
+                </div>
+            </div>
+            <a href="mailto:hello@bellatavola.co.uk?subject=Table Reservation" class="btn-primary btn-light">Reserve Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p class="footer-name">Bella Tavola</p>
+        <p class="footer-credit">Website by <a href="/showcases/">Gill Media</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Fade-in on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const observerOpts = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOpts);
+        faders.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
