@@ -135,161 +135,217 @@
         <p class="services__intro">Clear, transparent pricing with no hidden fees. Choose the package that fits your business and let's get to work.</p>
       </div>
 
-      <!-- Package comparison table -->
-      <div class="comparison-table-wrap">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th class="col-starter">Starter &mdash; &pound;299</th>
-              <th class="col-growth">Growth &mdash; &pound;699</th>
-              <th class="col-pro">Pro &mdash; &pound;1,199</th>
-            </tr>
-          </thead>
-          <tbody>
+      <div class="pricing__grid">
+        <!-- Starter Package -->
+        <div class="pricing-card" data-tier="starter">
+          <div class="pricing-card__header">
+            <span class="pricing-card__tier">Starter</span>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">&pound;</span>
+              <span class="pricing-card__amount">299</span>
+            </div>
+            <p class="pricing-card__tagline">Get online fast with a clean, professional website. Perfect for sole traders &amp; small businesses.</p>
+            <span class="pricing-card__turnaround">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Delivered in 5&ndash;7 days
+            </span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>1&ndash;3 page website (Home, About, Contact)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Template-based design, customised to your brand</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Mobile responsive on all devices</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Professional copywriting included</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Basic contact form</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Basic on-page SEO (titles, meta descriptions, H1s)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Google Business Profile setup &amp; optimised</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Google Maps embed</span>
+            </li>
+          </ul>
+          <div class="pricing-card__care">
+            <span class="pricing-card__care-label">Monthly Care Plan</span>
+            <span class="pricing-card__care-price">&pound;20/mo &mdash; Basic Care</span>
+            <span class="pricing-card__care-detail">Hosting, security updates, uptime monitoring, email support</span>
+          </div>
+          <div class="pricing-card__total">First year total: <strong>&pound;539</strong></div>
+          <a href="#contact" class="pricing-card__btn pricing-card__btn--outline">Get Started</a>
+        </div>
 
-            <tr class="section-row"><td colspan="4">Design &amp; build</td></tr>
-            <tr>
-              <td>Pages</td>
-              <td>1&ndash;3 pages<span class="cmp-note">Home, about, contact</span></td>
-              <td>Up to 6 pages<span class="cmp-note">Services, gallery, reviews, FAQs</span></td>
-              <td>Unlimited pages<span class="cmp-note">Full site architecture</span></td>
-            </tr>
-            <tr>
-              <td>Design approach</td>
-              <td>Template-based<span class="cmp-note">Customised to your brand</span></td>
-              <td>Fully custom design<span class="cmp-note">Built to your brand from scratch</span></td>
-              <td>Fully custom design<span class="cmp-note">With animations &amp; transitions</span></td>
-            </tr>
-            <tr>
-              <td>Mobile responsive</td>
-              <td class="cmp-check">&check; All devices</td>
-              <td class="cmp-check">&check; All devices</td>
-              <td class="cmp-check">&check; All devices</td>
-            </tr>
-            <tr>
-              <td>Copywriting</td>
-              <td>&check; Included<span class="cmp-note">Professional copy for all pages</span></td>
-              <td>&check; Included<span class="cmp-note">Conversion-focused, all pages</span></td>
-              <td>&check; Included<span class="cmp-note">Full conversion copy + SEO-optimised</span></td>
-            </tr>
+        <!-- Growth Package -->
+        <div class="pricing-card pricing-card--featured" data-tier="growth">
+          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__header">
+            <span class="pricing-card__tier">Growth</span>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">&pound;</span>
+              <span class="pricing-card__amount">699</span>
+            </div>
+            <p class="pricing-card__tagline">A website designed to generate leads, not just look good. Built for local businesses ready to grow.</p>
+            <span class="pricing-card__turnaround">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Delivered in 10&ndash;14 days
+            </span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Up to 6 page fully custom website</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Fully custom design, built from scratch</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Conversion-focused copywriting</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Lead capture form with email notifications</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Booking integration (Booksy, Calendly or similar)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Reviews spotlight section</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Intermediate SEO (keyword-targeted service pages)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Google Analytics setup</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Basic speed optimisation</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Google Business Profile + Maps</span>
+            </li>
+          </ul>
+          <div class="pricing-card__care">
+            <span class="pricing-card__care-label">Monthly Care Plan</span>
+            <span class="pricing-card__care-price">&pound;30/mo &mdash; Growth Care</span>
+            <span class="pricing-card__care-detail">Everything in Basic + 1 content update/mo, performance report, priority support</span>
+          </div>
+          <div class="pricing-card__total">First year total: <strong>&pound;1,059</strong></div>
+          <a href="#contact" class="pricing-card__btn pricing-card__btn--solid">Get Started</a>
+        </div>
 
-            <tr class="section-row"><td colspan="4">Lead generation &amp; bookings</td></tr>
-            <tr>
-              <td>Contact form</td>
-              <td>&check; Basic contact form</td>
-              <td>&check; Lead capture form<span class="cmp-note">With email notification</span></td>
-              <td>&check; Advanced lead capture<span class="cmp-note">CRM integration, auto-tagging</span></td>
-            </tr>
-            <tr>
-              <td>Booking system</td>
-              <td class="cmp-cross">&mdash;</td>
-              <td>&check; Integration<span class="cmp-note">Booksy, Calendly or similar</span></td>
-              <td>&check; Integration or custom build<span class="cmp-note">Built from scratch if needed</span></td>
-            </tr>
-            <tr>
-              <td>Reviews spotlight</td>
-              <td class="cmp-cross">&mdash;</td>
-              <td class="cmp-check">&check; Included</td>
-              <td class="cmp-check">&check; Included</td>
-            </tr>
-
-            <tr class="section-row"><td colspan="4">SEO &amp; local visibility</td></tr>
-            <tr>
-              <td>On-page SEO</td>
-              <td>Basic<span class="cmp-note">Title tags, meta descriptions, H1s</span></td>
-              <td>Intermediate<span class="cmp-note">Keyword-targeted service pages</span></td>
-              <td>Advanced<span class="cmp-note">Schema markup, local SEO, XML sitemap</span></td>
-            </tr>
-            <tr>
-              <td>Google Business Profile</td>
-              <td class="cmp-check">&check; Setup &amp; optimised</td>
-              <td class="cmp-check">&check; Setup &amp; optimised</td>
-              <td class="cmp-check">&check; Setup &amp; optimised</td>
-            </tr>
-            <tr>
-              <td>Google Maps embed</td>
-              <td class="cmp-check">&check; Included</td>
-              <td class="cmp-check">&check; Included</td>
-              <td class="cmp-check">&check; Included</td>
-            </tr>
-            <tr>
-              <td>Analytics &amp; tracking</td>
-              <td class="cmp-cross">&mdash;</td>
-              <td>&check; Google Analytics setup</td>
-              <td>&check; Analytics + Search Console<span class="cmp-note">Conversion tracking included</span></td>
-            </tr>
-
-            <tr class="section-row"><td colspan="4">Performance &amp; support</td></tr>
-            <tr>
-              <td>Speed &amp; performance</td>
-              <td class="cmp-cross">&mdash;</td>
-              <td>Basic optimisation</td>
-              <td>&check; Full Core Web Vitals audit<span class="cmp-note">Image compression, caching, load speed</span></td>
-            </tr>
-            <tr>
-              <td>Post-launch support</td>
-              <td class="cmp-cross">&mdash;</td>
-              <td class="cmp-cross">&mdash;</td>
-              <td>&check; 1 month free support<span class="cmp-note">Edits, fixes, questions included</span></td>
-            </tr>
-            <tr>
-              <td>Delivery time</td>
-              <td>5&ndash;7 days</td>
-              <td>10&ndash;14 days</td>
-              <td>2&ndash;3 weeks</td>
-            </tr>
-
-            <tr class="section-row"><td colspan="4">Monthly care plan &mdash; included with every package</td></tr>
-            <tr class="retainer-row">
-              <td>What&rsquo;s included</td>
-              <td>
-                <div class="retainer-box ret-starter">
-                  <div class="ret-price">&pound;20 <span>/ month</span></div>
-                  <div class="ret-label">Basic Care</div>
-                  <div class="ret-feature"><span class="ret-dot"></span>Hosting &amp; domain management</div>
-                  <div class="ret-feature"><span class="ret-dot"></span>Security &amp; software updates</div>
-                  <div class="ret-feature"><span class="ret-dot"></span>Monthly uptime monitoring</div>
-                  <div class="ret-feature"><span class="ret-dot"></span>Email support</div>
-                </div>
-              </td>
-              <td>
-                <div class="retainer-box ret-growth">
-                  <div class="ret-price">&pound;30 <span>/ month</span></div>
-                  <div class="ret-label">Growth Care</div>
-                  <div class="ret-feature"><span class="ret-dot dot-purple"></span>Everything in Basic Care</div>
-                  <div class="ret-feature"><span class="ret-dot dot-purple"></span>1 content update per month</div>
-                  <div class="ret-feature"><span class="ret-dot dot-purple"></span>Monthly performance report</div>
-                  <div class="ret-feature"><span class="ret-dot dot-purple"></span>Priority email support</div>
-                </div>
-              </td>
-              <td>
-                <div class="retainer-box ret-pro">
-                  <div class="ret-price">&pound;50 <span>/ month</span></div>
-                  <div class="ret-label">Pro Care</div>
-                  <div class="ret-feature"><span class="ret-dot dot-teal"></span>Everything in Growth Care</div>
-                  <div class="ret-feature"><span class="ret-dot dot-teal"></span>Up to 3 content updates/month</div>
-                  <div class="ret-feature"><span class="ret-dot dot-teal"></span>Monthly SEO health check</div>
-                  <div class="ret-feature"><span class="ret-dot dot-teal"></span>Google Business Profile updates</div>
-                  <div class="ret-feature"><span class="ret-dot dot-teal"></span>Phone &amp; priority support</div>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="total-row">
-              <td>First year total</td>
-              <td><strong>&pound;539</strong><span class="cmp-note">£299 build + £240/yr care</span></td>
-              <td><strong>&pound;1,059</strong><span class="cmp-note">£699 build + £360/yr care</span></td>
-              <td><strong>&pound;1,799</strong><span class="cmp-note">£1,199 build + £600/yr care</span></td>
-            </tr>
-
-          </tbody>
-        </table>
+        <!-- Pro Package -->
+        <div class="pricing-card" data-tier="pro">
+          <div class="pricing-card__header">
+            <span class="pricing-card__tier">Pro</span>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">&pound;</span>
+              <span class="pricing-card__amount">1,199</span>
+            </div>
+            <p class="pricing-card__tagline">A high-performance website built to drive consistent leads and conversions. For serious businesses.</p>
+            <span class="pricing-card__turnaround">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Delivered in 2&ndash;3 weeks
+            </span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Unlimited pages, full site architecture</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Fully custom design with animations &amp; transitions</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Full conversion copy + SEO-optimised</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Advanced lead capture (CRM integration, auto-tagging)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Booking integration or custom build from scratch</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>1 landing page for ads or campaigns</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Advanced SEO (schema markup, local SEO, XML sitemap)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Analytics + Search Console with conversion tracking</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Full Core Web Vitals audit (90+ Lighthouse)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Reviews spotlight + lead tracking system</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>1 month free post-launch support</span>
+            </li>
+          </ul>
+          <div class="pricing-card__care">
+            <span class="pricing-card__care-label">Monthly Care Plan</span>
+            <span class="pricing-card__care-price">&pound;50/mo &mdash; Pro Care</span>
+            <span class="pricing-card__care-detail">Everything in Growth + 3 updates/mo, SEO health checks, GBP updates, phone support</span>
+          </div>
+          <div class="pricing-card__total">First year total: <strong>&pound;1,799</strong></div>
+          <a href="#contact" class="pricing-card__btn pricing-card__btn--outline">Get Started</a>
+        </div>
       </div>
 
-      <!-- CTA under table -->
-      <div class="pricing__cta">
-        <a href="#contact" class="pricing-card__btn pricing-card__btn--solid">Start Your Project &rarr;</a>
+      <!-- Included in all packages -->
+      <div class="pricing__included">
+        <p class="pricing__included-title">Included in every package</p>
+        <div class="pricing__included-items">
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            SSL security (HTTPS)
+          </span>
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Fast, reliable hosting
+          </span>
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Fully mobile-optimised design
+          </span>
+        </div>
       </div>
     </div>
   </section>

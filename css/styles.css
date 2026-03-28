@@ -941,6 +941,66 @@ button, input, textarea, select { font: inherit; border: none; outline: none; ba
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
+/* Care plan box on cards */
+.pricing-card__care {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(108,99,255,0.04);
+  border: 1px solid rgba(108,99,255,0.08);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pricing-card--featured .pricing-card__care {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+}
+.pricing-card__care-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6c63ff;
+}
+.pricing-card--featured .pricing-card__care-label {
+  color: rgba(255,255,255,0.5);
+}
+.pricing-card__care-price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+.pricing-card--featured .pricing-card__care-price {
+  color: #fff;
+}
+.pricing-card__care-detail {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.5;
+}
+.pricing-card--featured .pricing-card__care-detail {
+  color: rgba(255,255,255,0.45);
+}
+
+/* First year total */
+.pricing-card__total {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+.pricing-card__total strong {
+  color: #1a1a2e;
+  font-size: 1rem;
+}
+.pricing-card--featured .pricing-card__total {
+  color: rgba(255,255,255,0.5);
+}
+.pricing-card--featured .pricing-card__total strong {
+  color: #fff;
+}
+
 @media (max-width: 1024px) {
   .pricing__grid {
     grid-template-columns: 1fr;
