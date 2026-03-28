@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashford Aesthetics — Premium Skin Clinic in Bishop's Stortford, Hertfordshire</title>
+    <meta name="description" content="Award-winning aesthetic clinic in Bishop's Stortford. Dermal fillers, anti-wrinkle, skin rejuvenation & more. CQC registered. Book your free consultation today.">
+    <meta name="keywords" content="aesthetics clinic Bishop's Stortford, dermal fillers Hertfordshire, anti-wrinkle treatment, skin clinic near me, botox Bishop's Stortford">
+    <meta property="og:title" content="Ashford Aesthetics — Premium Skin Clinic in Hertfordshire">
+    <meta property="og:description" content="Advanced aesthetic treatments tailored to enhance your natural beauty. Trusted by 2,400+ clients. Book your free consultation.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.ashfordaesthetics.co.uk">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Structured Data for Local SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Ashford Aesthetics",
+        "description": "Award-winning aesthetic clinic in Bishop's Stortford offering dermal fillers, anti-wrinkle treatments, skin rejuvenation and more.",
+        "url": "https://www.ashfordaesthetics.co.uk",
+        "telephone": "+44-1279-555-042",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "42 High Street",
+            "addressLocality": "Bishop's Stortford",
+            "addressRegion": "Hertfordshire",
+            "postalCode": "CM23 2LU",
+            "addressCountry": "GB"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.8721,
+            "longitude": 0.1603
+        },
+        "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00" }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "412"
+        },
+        "priceRange": "££"
+    }
+    </script>
+
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --sage: #8B9E8B;
+            --sage-dark: #6B7E6B;
+            --cream: #FAF7F2;
+            --cream-dark: #F0EBE3;
+            --charcoal: #2A2A28;
+            --warm-black: #1C1C1A;
+            --gold-accent: #C4A97D;
+            --rose: #C4A0A0;
+            --text-light: #6B6B68;
+            --border: rgba(43,43,40,0.08);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.15;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ========== ANNOUNCEMENT BAR ========== */
+        .announcement {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 110;
+        }
+        .announcement strong { color: var(--sage); }
+        .announcement a {
+            color: var(--gold-accent);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* ========== BACK LINK ========== */
+        .back-link {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 200;
+            font-size: 13px;
+            font-weight: 500;
+            color: #fff;
+            transition: all 0.3s;
+            background: var(--charcoal);
+            padding: 10px 18px;
+            border-radius: 100px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .back-link:hover { background: var(--sage-dark); }
+
+        /* ========== NAVIGATION ========== */
+        .site-nav {
+            position: sticky;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            background: rgba(28,28,26,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.4s;
+        }
+        .site-nav.scrolled {
+            background: rgba(250,247,242,0.95);
+            border-bottom: 1px solid var(--border);
+        }
+        .site-nav.scrolled .nav-link { color: var(--charcoal); }
+        .site-nav.scrolled .nav-link:hover { color: var(--sage-dark); }
+        .site-nav.scrolled .nav-brand { color: var(--charcoal); }
+        .site-nav.scrolled .nav-cta {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s;
+            letter-spacing: 0.3px;
+        }
+        .nav-link:hover { color: #fff; }
+        .nav-brand {
+            font-family: 'Instrument Serif', serif;
+            font-size: 22px;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .nav-cta {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 24px;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            border-radius: 100px;
+            color: #fff;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
+        }
+        .nav-cta:hover {
+            background: #fff;
+            color: var(--charcoal);
+            border-color: #fff;
+        }
+        .nav-phone {
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--warm-black);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 25% 50%, rgba(139,158,139,0.15) 0%, transparent 55%),
+                radial-gradient(ellipse at 75% 30%, rgba(196,169,125,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(196,160,160,0.08) 0%, transparent 45%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--cream), transparent);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 32px 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 28px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            width: 32px;
+            height: 1.5px;
+            background: var(--sage);
+        }
+        .hero h1 {
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            color: #fff;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 em { font-style: italic; color: var(--sage); }
+        .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.55);
+            max-width: 440px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .hero-social-proof {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .hero-avatars {
+            display: flex;
+        }
+        .hero-avatars span {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid var(--warm-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            margin-left: -8px;
+        }
+        .hero-avatars span:first-child { margin-left: 0; }
+        .hero-social-text {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.4;
+        }
+        .hero-social-text strong {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 14px 32px;
+            background: var(--sage);
+            color: #fff;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background: var(--sage-dark);
+            transform: translateY(-1px);
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 14px 32px;
+            background: transparent;
+            color: rgba(255,255,255,0.8);
+            border: 1.5px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            color: #fff;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 480px;
+            border-radius: 24px;
+            overflow: hidden;
+            background:
+                linear-gradient(160deg, rgba(139,158,139,0.2) 0%, transparent 40%),
+                linear-gradient(220deg, rgba(196,169,125,0.15) 0%, transparent 40%),
+                rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(139,158,139,0.25) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(196,169,125,0.2) 0%, transparent 35%);
+        }
+        .hero-visual-text {
+            position: absolute;
+            bottom: 32px; left: 32px; right: 32px;
+        }
+        .hero-visual-text span {
+            display: block;
+            font-family: 'Instrument Serif', serif;
+            font-size: 6.5rem;
+            color: rgba(255,255,255,0.04);
+            line-height: 0.85;
+            letter-spacing: -4px;
+        }
+
+        /* ========== TRUST BAR ========== */
+        .trust-bar {
+            position: relative;
+            z-index: 2;
+            padding: 40px 0;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+        }
+        .trust-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(139,158,139,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* ========== SECTION UTILITIES ========== */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 16px;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--sage);
+        }
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--charcoal);
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 520px;
+            line-height: 1.8;
+            margin-bottom: 48px;
+        }
+
+        /* ========== SERVICES ========== */
+        .services {
+            padding: 100px 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px 28px;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sage), var(--gold-accent));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(42,42,40,0.08);
+            border-color: transparent;
+        }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        .service-icon--1 { background: rgba(139,158,139,0.12); }
+        .service-icon--2 { background: rgba(196,169,125,0.12); }
+        .service-icon--3 { background: rgba(196,160,160,0.12); }
+        .service-icon--4 { background: rgba(139,158,139,0.12); }
+        .service-icon--5 { background: rgba(196,169,125,0.12); }
+        .service-icon--6 { background: rgba(196,160,160,0.12); }
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        .service-price {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sage-dark);
+        }
+        .service-duration {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        .service-cta {
+            display: block;
+            text-align: center;
+            margin-top: 48px;
+        }
+        .btn-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 14px 32px;
+            background: var(--charcoal);
+            color: #fff;
+            border-radius: 100px;
+            transition: all 0.3s;
+        }
+        .btn-dark:hover {
+            background: var(--sage-dark);
+            transform: translateY(-1px);
+        }
+
+        /* ========== BEFORE & AFTER ========== */
+        .results {
+            padding: 100px 0;
+            background: var(--cream-dark);
+        }
+        .results-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .results-header .section-label::before { display: none; }
+        .results-header .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+        .result-card:hover { transform: translateY(-4px); }
+        .result-image {
+            height: 260px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+        }
+        .result-before, .result-after {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .result-before {
+            background: linear-gradient(135deg, rgba(196,160,160,0.15), rgba(196,169,125,0.1));
+            color: var(--rose);
+        }
+        .result-after {
+            background: linear-gradient(135deg, rgba(139,158,139,0.15), rgba(139,158,139,0.08));
+            color: var(--sage-dark);
+        }
+        .result-divider {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--charcoal);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+        .result-info {
+            padding: 24px;
+        }
+        .result-info h4 {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            color: var(--charcoal);
+        }
+        .result-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* ========== BOOKING CALENDAR ========== */
+        .booking {
+            padding: 100px 0;
+        }
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .booking-left .section-desc { margin-bottom: 32px; }
+        .booking-steps {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        .booking-steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        .booking-steps li:last-child { border-bottom: none; }
+        .step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(139,158,139,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--sage-dark);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .booking-guarantee {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: rgba(139,158,139,0.08);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .booking-guarantee strong { color: var(--charcoal); }
+
+        /* Calendar widget */
+        .calendar-widget {
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(42,42,40,0.06);
+        }
+        .calendar-header {
+            padding: 24px 28px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .calendar-header h3 {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+        }
+        .calendar-nav {
+            display: flex;
+            gap: 8px;
+        }
+        .calendar-nav button {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--charcoal);
+            transition: all 0.2s;
+        }
+        .calendar-nav button:hover {
+            background: var(--cream);
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            padding: 16px 20px 8px;
+            gap: 4px;
+        }
+        .calendar-days span {
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 0;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            padding: 0 20px 16px;
+            gap: 4px;
+        }
+        .calendar-grid button {
+            aspect-ratio: 1;
+            border: none;
+            background: none;
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .calendar-grid button:hover {
+            background: rgba(139,158,139,0.1);
+        }
+        .calendar-grid button.empty {
+            pointer-events: none;
+        }
+        .calendar-grid button.selected {
+            background: var(--sage);
+            color: #fff;
+            font-weight: 600;
+        }
+        .calendar-grid button.today {
+            border: 1.5px solid var(--sage);
+            font-weight: 600;
+        }
+        .calendar-grid button.unavailable {
+            color: rgba(42,42,40,0.2);
+            pointer-events: none;
+        }
+        .calendar-times {
+            padding: 20px 28px;
+            border-top: 1px solid var(--border);
+        }
+        .calendar-times p {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+        .time-slots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .time-slot {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            background: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .time-slot:hover {
+            border-color: var(--sage);
+            background: rgba(139,158,139,0.05);
+        }
+        .time-slot.selected {
+            border-color: var(--sage);
+            background: var(--sage);
+            color: #fff;
+        }
+        .calendar-submit {
+            padding: 20px 28px;
+            border-top: 1px solid var(--border);
+        }
+        .calendar-submit button {
+            width: 100%;
+            padding: 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            background: var(--charcoal);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .calendar-submit button:hover {
+            background: var(--sage-dark);
+        }
+
+        /* ========== WHY US ========== */
+        .why-us {
+            padding: 100px 0;
+            background: var(--warm-black);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .why-us::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(139,158,139,0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 80%, rgba(196,169,125,0.06) 0%, transparent 45%);
+            pointer-events: none;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .why-us .section-title { color: #fff; }
+        .why-us .section-desc { color: rgba(255,255,255,0.55); }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.6rem;
+            color: var(--sage);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.45);
+            font-weight: 500;
+        }
+        .why-features {
+            list-style: none;
+        }
+        .why-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+        }
+        .why-features li:last-child { border-bottom: none; }
+        .why-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(139,158,139,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--sage);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials {
+            padding: 100px 0;
+        }
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .testimonials-header .section-label::before { display: none; }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 1px solid var(--border);
+        }
+        .testimonial-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+            color: var(--gold-accent);
+            font-size: 14px;
+        }
+        .testimonial-text {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .testimonial-avatar--1 { background: var(--sage); }
+        .testimonial-avatar--2 { background: var(--gold-accent); }
+        .testimonial-avatar--3 { background: var(--rose); }
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--charcoal);
+        }
+        .testimonial-role {
+            font-size: 0.78rem;
+            color: var(--text-light);
+        }
+        .testimonial-source {
+            margin-top: 48px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .testimonial-source a {
+            color: var(--sage-dark);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ========== CAMPAIGN LANDING BANNER ========== */
+        .campaign {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--charcoal) 0%, #3a3d3a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .campaign::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 60% 50%, rgba(139,158,139,0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .campaign-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .campaign-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 100px;
+            background: rgba(196,169,125,0.15);
+            color: var(--gold-accent);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .campaign h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .campaign-desc {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.55);
+            max-width: 540px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+        }
+        .campaign-features {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+        .campaign-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 500;
+        }
+        .campaign-feature span:first-child {
+            color: var(--sage);
+        }
+        .campaign-urgency {
+            font-size: 13px;
+            color: var(--gold-accent);
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        /* ========== ENQUIRY TRACKER / LEAD PANEL ========== */
+        .lead-panel {
+            padding: 100px 0;
+            background: var(--cream-dark);
+        }
+        .lead-panel-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .lead-panel-header .section-label::before { display: none; }
+        .lead-panel-header .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .lead-mockup {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(42,42,40,0.06);
+        }
+        .lead-mockup-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            background: var(--cream);
+        }
+        .lead-mockup-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .lead-mockup-dot--red { background: #FF5F56; }
+        .lead-mockup-dot--yellow { background: #FFBD2E; }
+        .lead-mockup-dot--green { background: #27CA40; }
+        .lead-mockup-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-left: 8px;
+        }
+        .lead-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+        }
+        .lead-stat {
+            background: #fff;
+            padding: 24px 20px;
+            text-align: center;
+        }
+        .lead-stat-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2rem;
+            color: var(--charcoal);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .lead-stat-number--sage { color: var(--sage); }
+        .lead-stat-number--gold { color: var(--gold-accent); }
+        .lead-stat-label {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .lead-table {
+            padding: 24px;
+        }
+        .lead-row {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1.5fr 1fr 1fr;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-light);
+            align-items: center;
+        }
+        .lead-row:first-child {
+            font-weight: 600;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+        .lead-row:last-child { border-bottom: none; }
+        .lead-name { color: var(--charcoal); font-weight: 500; }
+        .lead-status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .lead-status--new {
+            background: rgba(139,158,139,0.12);
+            color: var(--sage-dark);
+        }
+        .lead-status--contacted {
+            background: rgba(196,169,125,0.12);
+            color: var(--gold-accent);
+        }
+        .lead-status--booked {
+            background: rgba(42,42,40,0.08);
+            color: var(--charcoal);
+        }
+
+        /* ========== MAP / LOCATION ========== */
+        .location {
+            padding: 100px 0;
+        }
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .location-map {
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--cream-dark);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .location-details h3 {
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+        }
+        .location-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .location-info-item:last-child { border-bottom: none; }
+        .location-info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(139,158,139,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .location-info-item h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+            letter-spacing: 0.3px;
+        }
+        .location-info-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .location-info-item a {
+            color: var(--sage-dark);
+            font-weight: 500;
+        }
+
+        /* ========== CONTACT FORM ========== */
+        .contact-form-section {
+            padding: 100px 0;
+            background: var(--cream-dark);
+        }
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .contact-form {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 36px;
+            border: 1px solid var(--border);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            border: 1.5px solid rgba(42,42,40,0.1);
+            border-radius: 12px;
+            background: var(--cream);
+            color: var(--charcoal);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--sage);
+            box-shadow: 0 0 0 3px rgba(139,158,139,0.1);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            background: var(--charcoal);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+        .form-submit:hover {
+            background: var(--sage-dark);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--warm-black);
+            color: rgba(255,255,255,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding: 72px 0 48px;
+        }
+        .footer-brand-name {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .footer-brand-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.7;
+            max-width: 280px;
+            margin-bottom: 20px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.5);
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .footer-social a:hover {
+            background: var(--sage);
+            color: #fff;
+        }
+        .footer-col h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .footer-col a {
+            display: block;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover { color: var(--sage); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+        }
+        .footer-bottom a {
+            color: var(--sage);
+            transition: opacity 0.3s;
+        }
+        .footer-bottom a:hover { opacity: 0.7; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+            .hero-visual { height: 320px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: 1fr; gap: 48px; }
+            .booking-grid { grid-template-columns: 1fr; gap: 48px; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+            .location-grid { grid-template-columns: 1fr; }
+            .contact-form-grid { grid-template-columns: 1fr; gap: 48px; }
+            .footer-main { grid-template-columns: 1fr 1fr; gap: 36px; }
+            .lead-row { grid-template-columns: 1fr 1fr 1fr; }
+            .lead-row > :nth-child(4), .lead-row > :nth-child(5) { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .announcement { font-size: 12px; padding: 8px 12px; }
+            .nav-left a:not(.nav-brand) { display: none; }
+            .nav-right .nav-link { display: none; }
+            .nav-phone { display: none; }
+            .hero-inner { padding: 60px 20px 80px; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+            .services { padding: 70px 0; }
+            .services-grid { grid-template-columns: 1fr; }
+            .results { padding: 70px 0; }
+            .results-grid { grid-template-columns: 1fr; }
+            .testimonials { padding: 70px 0; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .booking { padding: 70px 0; }
+            .why-us { padding: 70px 0; }
+            .stat-grid { gap: 16px; }
+            .campaign { padding: 60px 0; }
+            .campaign-features { gap: 16px; }
+            .lead-panel { padding: 70px 0; }
+            .lead-stats { grid-template-columns: repeat(2, 1fr); }
+            .lead-table { overflow-x: auto; }
+            .lead-row { min-width: 400px; }
+            .location { padding: 70px 0; }
+            .location-map { height: 280px; }
+            .contact-form-section { padding: 70px 0; }
+            .contact-form { padding: 28px 24px; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-main { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+            .trust-inner { justify-content: center; }
+            .trust-item { flex-direction: column; text-align: center; }
+            .back-link { bottom: 16px; left: 16px; font-size: 12px; padding: 8px 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-visual { height: 240px; }
+            .hero-visual-text span { font-size: 4rem; }
+            .calendar-grid button { font-size: 12px; }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar (Conversion) -->
+    <div class="announcement">
+        <strong>Spring Offer:</strong> 20% off your first treatment &mdash; <a href="#booking">Book your free consultation today</a>
+    </div>
+
+    <!-- Back Link (moved to bottom-left, no overlap) -->
+    <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
+
+    <!-- Navigation (8 links = multi-page feel) -->
+    <nav class="site-nav" id="mainNav">
+        <div class="nav-inner">
+            <div class="nav-left">
+                <a href="#treatments" class="nav-link">Treatments</a>
+                <a href="#hero" class="nav-brand">Ashford Aesthetics</a>
+                <a href="#results" class="nav-link">Results</a>
+            </div>
+            <div class="nav-right">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#location" class="nav-link">Location</a>
+                <span class="nav-phone">01279 555 042</span>
+                <a href="#booking" class="nav-cta">Book Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO — Conversion-focused with social proof -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Award-Winning Clinic</p>
+                <h1>Where science meets <em>natural</em> beauty</h1>
+                <p class="hero-desc">Advanced aesthetic treatments tailored to enhance your natural beauty. CQC registered. Doctor-led. Trusted by over 2,400 clients across Hertfordshire.</p>
+                <div class="hero-actions">
+                    <a href="#booking" class="btn-primary">Book Free Consultation &rarr;</a>
+                    <a href="#treatments" class="btn-outline">View Treatments</a>
+                </div>
+                <div class="hero-social-proof">
+                    <div class="hero-avatars">
+                        <span style="background: var(--sage);">JC</span>
+                        <span style="background: var(--gold-accent);">RM</span>
+                        <span style="background: var(--rose);">SH</span>
+                        <span style="background: var(--sage-dark);">KP</span>
+                    </div>
+                    <div class="hero-social-text">
+                        <strong>2,400+ happy clients</strong><br>
+                        5.0 &#9733; on Google (412 reviews)
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-visual-text">
+                    <span>Glow</span>
+                    <span>From</span>
+                    <span>Within</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-inner">
+            <div class="trust-item">
+                <div class="trust-icon">&#9733;</div>
+                <span>5.0 Rating &middot; 412 Reviews</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#9879;</div>
+                <span>CQC Registered</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#9825;</div>
+                <span>Doctor-Led Treatments</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#10003;</div>
+                <span>Free Consultation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TREATMENTS (Page 2: Services) -->
+    <section class="services" id="treatments">
+        <div class="container">
+            <p class="section-label">Our Treatments</p>
+            <h2 class="section-title">Expert treatments, <br>exceptional results</h2>
+            <p class="section-desc">Every treatment begins with a thorough consultation to understand your goals and create a personalised plan.</p>
+
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon service-icon--1">&#10024;</div>
+                    <h3>Dermal Fillers</h3>
+                    <p>Natural-looking volume restoration and facial contouring using premium hyaluronic acid fillers.</p>
+                    <div class="service-meta">
+                        <span class="service-price">From &pound;250</span>
+                        <span class="service-duration">30&ndash;45 mins</span>
+                    </div>
+                </div>
+                <div class="service-card fade-in fade-in-delay-1">
+                    <div class="service-icon service-icon--2">&#9733;</div>
+                    <h3>Anti-Wrinkle Treatment</h3>
+                    <p>Smooth fine lines and prevent wrinkles with precise, natural-looking injections by our medical team.</p>
+                    <div class="service-meta">
+                        <span class="service-price">From &pound;180</span>
+                        <span class="service-duration">15&ndash;20 mins</span>
+                    </div>
+                </div>
+                <div class="service-card fade-in fade-in-delay-2">
+                    <div class="service-icon service-icon--3">&#9752;</div>
+                    <h3>Skin Rejuvenation</h3>
+                    <p>Advanced facials, chemical peels and microneedling to restore your skin's natural radiance and texture.</p>
+                    <div class="service-meta">
+                        <span class="service-price">From &pound;120</span>
+                        <span class="service-duration">45&ndash;60 mins</span>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon service-icon--4">&#10047;</div>
+                    <h3>Profhilo</h3>
+                    <p>Bio-remodelling treatment that deeply hydrates and firms the skin from within for a youthful glow.</p>
+                    <div class="service-meta">
+                        <span class="service-price">From &pound;300</span>
+                        <span class="service-duration">20&ndash;30 mins</span>
+                    </div>
+                </div>
+                <div class="service-card fade-in fade-in-delay-1">
+                    <div class="service-icon service-icon--5">&#9672;</div>
+                    <h3>Laser Hair Removal</h3>
+                    <p>Permanent hair reduction with medical-grade laser technology. Safe for all skin types.</p>
+                    <div class="service-meta">
+                        <span class="service-price">From &pound;80</span>
+                        <span class="service-duration">15&ndash;45 mins</span>
+                    </div>
+                </div>
+                <div class="service-card fade-in fade-in-delay-2">
+                    <div class="service-icon service-icon--6">&#9734;</div>
+                    <h3>PRP Therapy</h3>
+                    <p>Harness your body's natural healing powers to rejuvenate skin, stimulate collagen and restore hair.</p>
+                    <div class="service-meta">
+                        <span class="service-price">From &pound;350</span>
+                        <span class="service-duration">45&ndash;60 mins</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-cta">
+                <a href="#booking" class="btn-dark">Book Your Treatment &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE & AFTER RESULTS (Page 3: Results/Gallery) -->
+    <section class="results" id="results">
+        <div class="container">
+            <div class="results-header">
+                <p class="section-label">Before &amp; After</p>
+                <h2 class="section-title">Real results, real clients</h2>
+                <p class="section-desc">Every transformation starts with a conversation. See the results our clients have achieved.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card fade-in">
+                    <div class="result-image">
+                        <div class="result-before">Before</div>
+                        <div class="result-after">After</div>
+                        <div class="result-divider">&#8596;</div>
+                    </div>
+                    <div class="result-info">
+                        <h4>Lip Enhancement</h4>
+                        <p>Juvederm Ultra &middot; Natural volume boost</p>
+                    </div>
+                </div>
+                <div class="result-card fade-in fade-in-delay-1">
+                    <div class="result-image">
+                        <div class="result-before">Before</div>
+                        <div class="result-after">After</div>
+                        <div class="result-divider">&#8596;</div>
+                    </div>
+                    <div class="result-info">
+                        <h4>Anti-Wrinkle Treatment</h4>
+                        <p>Forehead &amp; crow's feet &middot; 2 weeks post</p>
+                    </div>
+                </div>
+                <div class="result-card fade-in fade-in-delay-2">
+                    <div class="result-image">
+                        <div class="result-before">Before</div>
+                        <div class="result-after">After</div>
+                        <div class="result-divider">&#8596;</div>
+                    </div>
+                    <div class="result-info">
+                        <h4>Skin Rejuvenation</h4>
+                        <p>3x Chemical Peel course &middot; 6 week result</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONLINE BOOKING / SCHEDULING (Page 4: Book) -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-grid">
+                <div class="booking-left">
+                    <p class="section-label">Online Booking</p>
+                    <h2 class="section-title">Book your free consultation</h2>
+                    <p class="section-desc">Choose a date and time that works for you. Your consultation is completely free and no-obligation.</p>
+                    <ul class="booking-steps">
+                        <li>
+                            <span class="step-num">1</span>
+                            <span>Pick a date and time that suits you</span>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <span>Meet Dr. Ashford to discuss your goals</span>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <span>Receive a personalised treatment plan</span>
+                        </li>
+                        <li>
+                            <span class="step-num">4</span>
+                            <span>Begin your transformation with expert care</span>
+                        </li>
+                    </ul>
+                    <div class="booking-guarantee">
+                        <span>&#128274;</span>
+                        <span><strong>No payment required.</strong> Free cancellation up to 24 hours before your appointment.</span>
+                    </div>
+                </div>
+                <div class="calendar-widget fade-in">
+                    <div class="calendar-header">
+                        <h3>April 2026</h3>
+                        <div class="calendar-nav">
+                            <button>&lsaquo;</button>
+                            <button>&rsaquo;</button>
+                        </div>
+                    </div>
+                    <div class="calendar-days">
+                        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                    </div>
+                    <div class="calendar-grid">
+                        <button class="empty"></button><button class="empty"></button><button>1</button><button>2</button><button>3</button><button>4</button><button class="unavailable">5</button>
+                        <button>6</button><button>7</button><button class="today">8</button><button>9</button><button>10</button><button>11</button><button class="unavailable">12</button>
+                        <button>13</button><button class="selected">14</button><button>15</button><button>16</button><button>17</button><button>18</button><button class="unavailable">19</button>
+                        <button>20</button><button>21</button><button>22</button><button>23</button><button>24</button><button>25</button><button class="unavailable">26</button>
+                        <button>27</button><button>28</button><button>29</button><button>30</button><button class="empty"></button><button class="empty"></button><button class="empty"></button>
+                    </div>
+                    <div class="calendar-times">
+                        <p>Available times for Tue 14 April</p>
+                        <div class="time-slots">
+                            <button class="time-slot">9:00</button>
+                            <button class="time-slot">9:30</button>
+                            <button class="time-slot selected">10:00</button>
+                            <button class="time-slot">11:30</button>
+                            <button class="time-slot">13:00</button>
+                            <button class="time-slot">14:00</button>
+                            <button class="time-slot">15:30</button>
+                            <button class="time-slot">16:00</button>
+                        </div>
+                    </div>
+                    <div class="calendar-submit">
+                        <button>Confirm &mdash; Tue 14 April at 10:00 &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / WHY US (Page 5: About) -->
+    <section class="why-us" id="about">
+        <div class="container">
+            <div class="why-grid">
+                <div>
+                    <p class="section-label" style="color: var(--sage);">Why Ashford Aesthetics</p>
+                    <h2 class="section-title">A clinic built on trust and expertise</h2>
+                    <p class="section-desc">Led by Dr. Sarah Ashford, our team of medical professionals brings over 15 years of combined experience in aesthetic medicine.</p>
+                    <ul class="why-features">
+                        <li>
+                            <span class="why-check">&#10003;</span>
+                            <span>Doctor-led consultations with personalised treatment plans tailored to your unique facial anatomy</span>
+                        </li>
+                        <li>
+                            <span class="why-check">&#10003;</span>
+                            <span>Premium, FDA-approved products from trusted brands including Juvederm, Restylane and Obagi</span>
+                        </li>
+                        <li>
+                            <span class="why-check">&#10003;</span>
+                            <span>State-of-the-art clinic with the latest medical-grade technology and equipment</span>
+                        </li>
+                        <li>
+                            <span class="why-check">&#10003;</span>
+                            <span>Comprehensive aftercare and follow-up appointments included with every treatment</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="stat-grid fade-in">
+                        <div class="stat-card">
+                            <div class="stat-number">2,400+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5.0</div>
+                            <div class="stat-label">Google Rating</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Would Recommend</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (Page 6: Reviews) -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <p class="section-label">Client Reviews</p>
+                <h2 class="section-title">What our clients say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <p class="testimonial-text">"I was so nervous about my first treatment but the team made me feel completely at ease. The results are incredibly natural &mdash; exactly what I wanted."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar testimonial-avatar--1">JC</div>
+                        <div>
+                            <div class="testimonial-name">Jennifer C.</div>
+                            <div class="testimonial-role">Dermal Fillers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-delay-1">
+                    <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <p class="testimonial-text">"Dr. Ashford really listens. She talked me through every option and helped me choose exactly the right treatment. My skin has never looked better."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar testimonial-avatar--2">RM</div>
+                        <div>
+                            <div class="testimonial-name">Rachel M.</div>
+                            <div class="testimonial-role">Skin Rejuvenation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-delay-2">
+                    <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <p class="testimonial-text">"I've been coming here for over two years now. The clinic is beautiful, the staff are lovely, and the results speak for themselves. Highly recommend."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar testimonial-avatar--3">SH</div>
+                        <div>
+                            <div class="testimonial-name">Sarah H.</div>
+                            <div class="testimonial-role">Regular Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="testimonial-source">Read all 412 reviews on <a href="#" onclick="return false;">Google</a></p>
+        </div>
+    </section>
+
+    <!-- CAMPAIGN LANDING SECTION (Ad/Campaign landing page) -->
+    <section class="campaign">
+        <div class="container">
+            <div class="campaign-inner">
+                <div class="campaign-badge">Limited Offer</div>
+                <h2>New client? Get 20% off your first treatment</h2>
+                <p class="campaign-desc">Experience the Ashford Aesthetics difference. Book a free consultation and receive 20% off any treatment as a new client.</p>
+                <div class="campaign-features">
+                    <div class="campaign-feature">
+                        <span>&#10003;</span>
+                        <span>Free consultation</span>
+                    </div>
+                    <div class="campaign-feature">
+                        <span>&#10003;</span>
+                        <span>No obligation</span>
+                    </div>
+                    <div class="campaign-feature">
+                        <span>&#10003;</span>
+                        <span>Doctor-led</span>
+                    </div>
+                    <div class="campaign-feature">
+                        <span>&#10003;</span>
+                        <span>Premium products</span>
+                    </div>
+                </div>
+                <a href="#booking" class="btn-primary">Claim Your 20% Off &rarr;</a>
+                <p class="campaign-urgency">&#9202; Offer ends 30th April &mdash; Limited availability</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD TRACKING DASHBOARD (shows enquiry management) -->
+    <section class="lead-panel">
+        <div class="container">
+            <div class="lead-panel-header">
+                <p class="section-label">Lead Tracking</p>
+                <h2 class="section-title">All your enquiries, one dashboard</h2>
+                <p class="section-desc">Every booking, phone call and form submission tracked in one place. Know exactly where your leads come from.</p>
+            </div>
+            <div class="lead-mockup fade-in">
+                <div class="lead-mockup-bar">
+                    <span class="lead-mockup-dot lead-mockup-dot--red"></span>
+                    <span class="lead-mockup-dot lead-mockup-dot--yellow"></span>
+                    <span class="lead-mockup-dot lead-mockup-dot--green"></span>
+                    <span class="lead-mockup-title">Ashford Aesthetics &mdash; Enquiry Dashboard</span>
+                </div>
+                <div class="lead-stats">
+                    <div class="lead-stat">
+                        <div class="lead-stat-number lead-stat-number--sage">47</div>
+                        <div class="lead-stat-label">New Enquiries</div>
+                    </div>
+                    <div class="lead-stat">
+                        <div class="lead-stat-number lead-stat-number--gold">32</div>
+                        <div class="lead-stat-label">Consultations Booked</div>
+                    </div>
+                    <div class="lead-stat">
+                        <div class="lead-stat-number">89%</div>
+                        <div class="lead-stat-label">Conversion Rate</div>
+                    </div>
+                    <div class="lead-stat">
+                        <div class="lead-stat-number">&pound;12.4k</div>
+                        <div class="lead-stat-label">Revenue This Month</div>
+                    </div>
+                </div>
+                <div class="lead-table">
+                    <div class="lead-row">
+                        <span>Name</span>
+                        <span>Treatment</span>
+                        <span>Source</span>
+                        <span>Date</span>
+                        <span>Status</span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-name">Emma T.</span>
+                        <span>Dermal Fillers</span>
+                        <span>Google Ads</span>
+                        <span>Today</span>
+                        <span><span class="lead-status lead-status--new">New</span></span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-name">Sophie K.</span>
+                        <span>Anti-Wrinkle</span>
+                        <span>Instagram</span>
+                        <span>Yesterday</span>
+                        <span><span class="lead-status lead-status--contacted">Contacted</span></span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-name">Laura M.</span>
+                        <span>Profhilo</span>
+                        <span>Website</span>
+                        <span>2 days ago</span>
+                        <span><span class="lead-status lead-status--booked">Booked</span></span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-name">Kate R.</span>
+                        <span>Skin Rejuvenation</span>
+                        <span>Referral</span>
+                        <span>3 days ago</span>
+                        <span><span class="lead-status lead-status--booked">Booked</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION / MAP (Page 7: Find Us) -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.5!2d0.1603!3d51.8721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDUyJzE5LjYiTiAwwrAwOSc0MC4xIkU!5e0!3m2!1sen!2suk!4v1" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="location-details">
+                    <p class="section-label">Find Us</p>
+                    <h3>Visit our clinic</h3>
+                    <div class="location-info-item">
+                        <div class="location-info-icon">&#128205;</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>42 High Street, Bishop's Stortford<br>Hertfordshire CM23 2LU</p>
+                        </div>
+                    </div>
+                    <div class="location-info-item">
+                        <div class="location-info-icon">&#128222;</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+441279555042">01279 555 042</a></p>
+                        </div>
+                    </div>
+                    <div class="location-info-item">
+                        <div class="location-info-icon">&#9993;</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:hello@ashfordaesthetics.co.uk">hello@ashfordaesthetics.co.uk</a></p>
+                        </div>
+                    </div>
+                    <div class="location-info-item">
+                        <div class="location-info-icon">&#128336;</div>
+                        <div>
+                            <h4>Opening Hours</h4>
+                            <p>Mon &ndash; Fri: 9am &ndash; 7pm<br>Saturday: 9am &ndash; 5pm<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM (Page 8: Contact) -->
+    <section class="contact-form-section" id="contact">
+        <div class="container">
+            <div class="contact-form-grid">
+                <div>
+                    <p class="section-label">Get In Touch</p>
+                    <h2 class="section-title">Have a question? We're here to help</h2>
+                    <p class="section-desc">Whether you're ready to book or just want to learn more, our team is happy to answer any questions.</p>
+                    <div class="booking-guarantee" style="margin-top: 24px;">
+                        <span>&#128274;</span>
+                        <span><strong>Your data is safe.</strong> We never share your information. All enquiries are confidential.</span>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="Jane">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Smith">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="jane@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="07123 456 789">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>What can we help with?</label>
+                        <select>
+                            <option value="" disabled selected>Select a topic</option>
+                            <option>Treatment enquiry</option>
+                            <option>Pricing information</option>
+                            <option>Booking question</option>
+                            <option>Aftercare support</option>
+                            <option>General enquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea placeholder="Tell us how we can help..."></textarea>
+                    </div>
+                    <button class="form-submit" type="button">Send Message &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Multi-column, links simulate multi-page site) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-main">
+                <div>
+                    <div class="footer-brand-name">Ashford Aesthetics</div>
+                    <p class="footer-brand-desc">Award-winning aesthetic clinic in Bishop's Stortford. CQC registered. Doctor-led treatments for natural results.</p>
+                    <div class="footer-social">
+                        <a href="#">&#9737;</a>
+                        <a href="#">f</a>
+                        <a href="#">&#9998;</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <a href="#treatments">Dermal Fillers</a>
+                    <a href="#treatments">Anti-Wrinkle</a>
+                    <a href="#treatments">Skin Rejuvenation</a>
+                    <a href="#treatments">Profhilo</a>
+                    <a href="#treatments">Laser Hair Removal</a>
+                    <a href="#treatments">PRP Therapy</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Clinic</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#results">Results</a>
+                    <a href="#location">Find Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="tel:+441279555042">01279 555 042</a>
+                    <a href="mailto:hello@ashfordaesthetics.co.uk">hello@ashford...</a>
+                    <a href="#booking">Book Online</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ashford Aesthetics. All rights reserved.</p>
+                <p>Website by <a href="../index.html">Gill Media</a> &middot; Pro Package</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Fade-in on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const observerOpts = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOpts);
+        faders.forEach(el => observer.observe(el));
+
+        // Calendar interaction
+        document.querySelectorAll('.calendar-grid button:not(.empty):not(.unavailable)').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.calendar-grid button').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+
+</body>
+</html>

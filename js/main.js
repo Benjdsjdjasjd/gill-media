@@ -354,18 +354,36 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.innerHTML = '<span>Sending...</span>';
       btn.style.pointerEvents = 'none';
 
-      // Simulate submission
-      setTimeout(() => {
-        btn.innerHTML = '<span>Message Sent!</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
-        btn.style.background = 'linear-gradient(135deg, #00ff88 0%, #00d4ff 100%)';
+      const formData = new FormData(this);
 
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(response => {
+        if (response.ok) {
+          btn.innerHTML = '<span>Message Sent!</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
+          btn.style.background = 'linear-gradient(135deg, #00ff88 0%, #00d4ff 100%)';
+          setTimeout(() => {
+            btn.innerHTML = originalContent;
+            btn.style.background = '';
+            btn.style.pointerEvents = '';
+            contactForm.reset();
+          }, 3000);
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        btn.innerHTML = '<span>Error — Try Again</span>';
+        btn.style.background = 'linear-gradient(135deg, #ff4444 0%, #ff6666 100%)';
         setTimeout(() => {
           btn.innerHTML = originalContent;
           btn.style.background = '';
           btn.style.pointerEvents = '';
-          contactForm.reset();
         }, 3000);
-      }, 1500);
+      });
     });
   }
 
