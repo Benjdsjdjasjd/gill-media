@@ -390,25 +390,8 @@ button, input, textarea, select { font: inherit; border: none; outline: none; ba
   align-items: center;
   justify-content: center;
   background: #06060e;
-  overflow: visible;
+  overflow: hidden;
   padding: 6rem 3rem 4rem;
-  padding-bottom: 10rem;
-  margin-bottom: -80px;
-  z-index: 2;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: #f8f6ff;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 C360,0 1080,0 1440,120 L1440,120 L0,120 Z' fill='white'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 C360,0 1080,0 1440,120 L1440,120 L0,120 Z' fill='white'/%3E%3C/svg%3E");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  z-index: 3;
 }
 
 /* Animated orbs */
