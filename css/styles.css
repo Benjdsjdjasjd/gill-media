@@ -392,6 +392,13 @@ button, input, textarea, select { font: inherit; border: none; outline: none; ba
   background: #06060e;
   overflow: hidden;
   padding: 6rem 3rem 4rem;
+  padding-bottom: 8rem;
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% calc(100% - 80px),
+    75% 100%, 25% calc(100% - 40px), 0% calc(100% - 80px)
+  );
+  margin-bottom: -60px;
+  z-index: 2;
 }
 
 /* Animated orbs */
