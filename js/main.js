@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const formData = new FormData(this);
 
-      fetch(window.location.pathname, {
+      fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString()
