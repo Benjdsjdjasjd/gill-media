@@ -1,14 +1,14 @@
 /* =========================================================
-   Stortford Vikings – Data Manager
+   Eastside Hoops – Data Manager
    Fetches live data from a published Google Sheet.
 
    SETUP (one-time — see SETUP-GUIDE.html for full walkthrough):
-   1. Paste VikingsSheetSetup.gs into Extensions → Apps Script
-   2. Run setupVikingsSheet() once — it builds everything
+   1. Paste the sheet setup script into Extensions → Apps Script
+   2. Run the setup function once — it builds everything
    3. File → Share → Publish to web → Entire Document → Publish
    4. Copy the Sheet ID from the URL and paste it below
 
-   Phil ONLY fills in the Fixtures tab.
+   The coach ONLY fills in the Fixtures tab.
    Standings auto-calculate via the Apps Script trigger.
    ========================================================= */
 
@@ -22,7 +22,7 @@ const VikingsData = (() => {
 
   const SHEET_ID = '1QDKcbvsa_FJ-qJ-VcFeQPKtf8rsAXcVR6L-FBS-chd0';
 
-  // Tab names — must match exactly what Phil names the tabs
+  // Tab names — must match exactly what the coach names the tabs
   const TABS = {
     fixtures:  'Fixtures',
     standings: 'Standings',
@@ -151,36 +151,36 @@ const VikingsData = (() => {
       { date: '2026-04-05', team: 'U12', opponent: 'Harlow Hawks', venue: 'Home', time: '18:00', score: '', result: '' },
       { date: '2026-04-08', team: 'U14', opponent: 'Chelmsford Chargers', venue: 'Away', time: '19:00', score: '', result: '' },
       { date: '2026-04-12', team: 'U16', opponent: 'Cambridge Cats', venue: 'Home', time: '20:00', score: '', result: '' },
-      { date: '2026-04-19', team: 'Valkyries', opponent: 'Norwich Falcons', venue: 'Away', time: '19:00', score: '', result: '' },
+      { date: '2026-04-19', team: 'Women\'s Team', opponent: 'Norwich Falcons', venue: 'Away', time: '19:00', score: '', result: '' },
       { date: '2026-04-26', team: 'U18', opponent: 'Colchester Thunder', venue: 'Home', time: '18:30', score: '', result: '' },
-      { date: '2026-03-15', team: 'Valkyries', opponent: 'Norwich Falcons', venue: 'Away', time: '19:00', score: '65-58', result: 'W' },
+      { date: '2026-03-15', team: 'Women\'s Team', opponent: 'Norwich Falcons', venue: 'Away', time: '19:00', score: '65-58', result: 'W' },
       { date: '2026-03-08', team: 'U16', opponent: 'Essex Eagles', venue: 'Home', time: '19:30', score: '52-60', result: 'L' },
       { date: '2026-03-01', team: 'U14', opponent: 'Harlow Hawks', venue: 'Home', time: '18:30', score: '44-38', result: 'W' },
       { date: '2026-02-22', team: 'U12', opponent: 'Chelmsford Chargers', venue: 'Away', time: '17:30', score: '36-42', result: 'L' },
       { date: '2026-02-15', team: 'U18', opponent: 'Ipswich Heat', venue: 'Home', time: '19:00', score: '71-63', result: 'W' },
       { date: '2026-02-08', team: 'U16', opponent: 'Cambridge Cats', venue: 'Away', time: '18:00', score: '55-55', result: 'D' },
-      { date: '2026-01-25', team: 'Valkyries', opponent: 'Colchester Thunder', venue: 'Home', time: '19:00', score: '48-39', result: 'W' },
+      { date: '2026-01-25', team: 'Women\'s Team', opponent: 'Colchester Thunder', venue: 'Home', time: '19:00', score: '48-39', result: 'W' },
     ];
   }
 
   function getSampleStandings() {
     return [
       // U12 League
-      { team: 'Stortford Vikings', league: 'U12 East Herts League', p: 8, w: 5, l: 3, pf: 312, pa: 290, pd: 22, pts: 18 },
+      { team: 'Eastside Hoops', league: 'U12 East Herts League', p: 8, w: 5, l: 3, pf: 312, pa: 290, pd: 22, pts: 18 },
       { team: 'Harlow Hawks', league: 'U12 East Herts League', p: 8, w: 6, l: 2, pf: 330, pa: 275, pd: 55, pts: 20 },
       { team: 'Chelmsford Chargers', league: 'U12 East Herts League', p: 8, w: 4, l: 4, pf: 298, pa: 305, pd: -7, pts: 16 },
       { team: 'Cambridge Cubs', league: 'U12 East Herts League', p: 8, w: 1, l: 7, pf: 240, pa: 310, pd: -70, pts: 10 },
       // U14 League
-      { team: 'Stortford Vikings', league: 'U14 East Region', p: 10, w: 7, l: 3, pf: 445, pa: 390, pd: 55, pts: 24 },
+      { team: 'Eastside Hoops', league: 'U14 East Region', p: 10, w: 7, l: 3, pf: 445, pa: 390, pd: 55, pts: 24 },
       { team: 'Essex Eagles', league: 'U14 East Region', p: 10, w: 8, l: 2, pf: 460, pa: 370, pd: 90, pts: 26 },
       { team: 'Norwich Falcons', league: 'U14 East Region', p: 10, w: 5, l: 5, pf: 410, pa: 415, pd: -5, pts: 20 },
       { team: 'Ipswich Heat', league: 'U14 East Region', p: 10, w: 0, l: 10, pf: 310, pa: 450, pd: -140, pts: 10 },
       // U16 League
-      { team: 'Stortford Vikings', league: 'U16 East Region', p: 10, w: 6, l: 4, pf: 520, pa: 495, pd: 25, pts: 22 },
+      { team: 'Eastside Hoops', league: 'U16 East Region', p: 10, w: 6, l: 4, pf: 520, pa: 495, pd: 25, pts: 22 },
       { team: 'Cambridge Cats', league: 'U16 East Region', p: 10, w: 7, l: 3, pf: 540, pa: 480, pd: 60, pts: 24 },
       { team: 'Colchester Thunder', league: 'U16 East Region', p: 10, w: 3, l: 7, pf: 460, pa: 510, pd: -50, pts: 16 },
-      // Valkyries League
-      { team: 'Stortford Valkyries', league: 'Women\'s East Herts League', p: 8, w: 6, l: 2, pf: 410, pa: 340, pd: 70, pts: 20 },
+      // Women's League
+      { team: 'Eastside Women\'s', league: 'Women\'s East Herts League', p: 8, w: 6, l: 2, pf: 410, pa: 340, pd: 70, pts: 20 },
       { team: 'Norwich Falcons W', league: 'Women\'s East Herts League', p: 8, w: 5, l: 3, pf: 380, pa: 350, pd: 30, pts: 18 },
       { team: 'Colchester Storm W', league: 'Women\'s East Herts League', p: 8, w: 2, l: 6, pf: 310, pa: 400, pd: -90, pts: 12 },
     ];
@@ -192,7 +192,7 @@ const VikingsData = (() => {
       { team: 'U14', ageGroup: 'Under 14', league: 'U14 East Region', season: '2025-26' },
       { team: 'U16', ageGroup: 'Under 16', league: 'U16 East Region', season: '2025-26' },
       { team: 'U18', ageGroup: 'Under 18', league: 'U18 East Region', season: '2025-26' },
-      { team: 'Valkyries', ageGroup: 'Women', league: 'Women\'s East Herts League', season: '2025-26' },
+      { team: 'Women\'s Team', ageGroup: 'Women', league: 'Women\'s East Herts League', season: '2025-26' },
     ];
   }
 

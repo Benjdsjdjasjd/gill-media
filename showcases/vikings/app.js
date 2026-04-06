@@ -1,5 +1,5 @@
 /* =========================================================
-   Stortford Vikings – Site JavaScript (v4 Redesign)
+   Eastside Hoops – Site JavaScript (v4 Redesign)
    Uses data-manager.js for Google Sheets integration
    ========================================================= */
 
@@ -151,9 +151,9 @@ function renderStandingsPreview(container, grouped) {
             <tbody>
     `;
     table.forEach((row, i) => {
-      const isVikings = row.team.toLowerCase().includes('viking') ||
-                        row.team.toLowerCase().includes('valkyrie') ||
-                        row.team.toLowerCase().includes('stortford');
+      const isVikings = row.team.toLowerCase().includes('eastside') ||
+                        row.team.toLowerCase().includes('hoops') ||
+                        row.team.toLowerCase().includes('women');
       const rowClass = isVikings ? 'vikings-row' : '';
       html += `
         <tr class="${rowClass}">

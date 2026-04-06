@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>League Standings – Stortford Vikings Basketball Club</title>
-  <meta name="description" content="League tables and standings for all Stortford Vikings teams.">
+  <title>League Standings – Eastside Hoops Basketball Club</title>
+  <meta name="description" content="League tables and standings for all Eastside Hoops teams.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/images/VikingsLogo.png">
@@ -15,9 +15,9 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Stortford Vikings home">
-        <img src="assets/images/VikingsLogo.png" alt="Stortford Vikings logo">
-        <span>Vikings</span>
+      <a class="brand" href="index.html" aria-label="Eastside Hoops home">
+        <img src="assets/images/VikingsLogo.png" alt="Eastside Hoops Basketball Club logo">
+        <span>Eastside Hoops</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav id="nav" class="nav" aria-label="Primary navigation">
@@ -38,7 +38,7 @@
       <div class="hero-overlay"></div>
       <div class="container" style="position: relative; z-index: 1; padding: 3.5rem 0;">
         <h1>League <span class="accent">Standings</span></h1>
-        <p style="max-width: 600px; color: var(--muted); font-size: 1.05rem;">Track how every Vikings team is performing across their leagues this season.</p>
+        <p style="max-width: 600px; color: var(--muted); font-size: 1.05rem;">Track how every Eastside Hoops team is performing across their leagues this season.</p>
       </div>
     </section>
 
@@ -87,7 +87,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Bishop's Stortford Vikings Basketball Club. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Eastside Hoops Basketball Club. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -125,8 +125,8 @@
           if (filter && filter !== 'all') {
             const hasTeam = table.some(r =>
               r.team.toLowerCase().includes(filter.toLowerCase()) ||
-              r.team.toLowerCase().includes('viking') ||
-              r.team.toLowerCase().includes('valkyrie')
+              r.team.toLowerCase().includes('eastside') ||
+              r.team.toLowerCase().includes('hoops')
             );
             if (!hasTeam) return;
           }
@@ -153,9 +153,9 @@
           `;
 
           table.forEach((row, i) => {
-            const isVikings = row.team.toLowerCase().includes('viking') ||
-                              row.team.toLowerCase().includes('valkyrie') ||
-                              row.team.toLowerCase().includes('stortford');
+            const isVikings = row.team.toLowerCase().includes('eastside') ||
+                              row.team.toLowerCase().includes('hoops') ||
+                              row.team.toLowerCase().includes('women');
             const rowClass = isVikings ? 'vikings-row' : '';
             const pdSign = row.pd > 0 ? '+' : '';
 
