@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5a623"/>
+      <stop offset="100%" style="stop-color:#f7c948"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#bg)" stroke="url(#accent)" stroke-width="4"/>
+  <!-- Basketball -->
+  <circle cx="100" cy="85" r="38" fill="none" stroke="url(#accent)" stroke-width="3.5"/>
+  <path d="M62,85 Q100,60 138,85" fill="none" stroke="url(#accent)" stroke-width="2.5"/>
+  <path d="M62,85 Q100,110 138,85" fill="none" stroke="url(#accent)" stroke-width="2.5"/>
+  <line x1="100" y1="47" x2="100" y2="123" stroke="url(#accent)" stroke-width="2.5"/>
+  <!-- Text -->
+  <text x="100" y="148" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="800" font-size="18" fill="#f5a623" letter-spacing="3">EASTSIDE</text>
+  <text x="100" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="12" fill="rgba(255,255,255,0.6)" letter-spacing="5">HOOPS</text>
+</svg>

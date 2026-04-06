@@ -20,7 +20,7 @@ const VikingsData = (() => {
   // Example: https://docs.google.com/spreadsheets/d/ABC123xyz/edit
   //          Sheet ID = "ABC123xyz"
 
-  const SHEET_ID = '1QDKcbvsa_FJ-qJ-VcFeQPKtf8rsAXcVR6L-FBS-chd0';
+  const SHEET_ID = 'DEMO_MODE';
 
   // Tab names — must match exactly what the coach names the tabs
   const TABS = {
