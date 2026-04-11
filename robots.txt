@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /showcases/vikings/_docs/
+
+Sitemap: https://gillmedia.net/sitemap.xml
