@@ -1,0 +1,41 @@
+# Gill Media
+
+## About
+Gill Media is a web design agency based in Hertfordshire, UK, building professional websites for local businesses. Founded by Ben Gill, the agency specialises in conversion-focused websites that generate real enquiries for small and local businesses.
+
+## Services
+Gill Media offers three web design packages:
+
+- **Starter Package (£299)**: 1-3 page professional website. Template-based design customised to your brand. Includes mobile responsive design, contact form, basic SEO, Google Business Profile setup, and copywriting. Delivered in 5-7 days.
+- **Growth Package (£699)**: Up to 6 page fully custom website. Built from scratch with conversion-focused design. Includes lead capture forms, booking integration (Booksy, Calendly or similar), Google Analytics, intermediate SEO, and Google Maps. Delivered in 10-14 days.
+- **Pro Package (£1,199)**: Unlimited pages with full site architecture. Fully custom design with animations and transitions. Includes booking integration or custom build, campaign landing page, advanced SEO, analytics with conversion tracking, and Core Web Vitals audit. Delivered in 2-3 weeks.
+
+## Monthly Care Plans
+Every package includes an ongoing monthly care plan:
+
+- **Basic Care (£20/month)**: Hosting, security updates, email support.
+- **Growth Care (£30/month)**: Everything in Basic plus content updates and support.
+- **Pro Care (£50/month)**: Everything in Growth plus content updates and priority support.
+
+## Portfolio
+Gill Media has built websites across multiple industries including:
+
+- Restaurants and hospitality
+- Personal trainers and fitness
+- Hair salons and beauty
+- Plumbers and tradespeople
+- Aesthetics clinics
+- Sports clubs and community organisations
+
+## Contact
+- Website: https://gillmedia.net
+- Email: info@gillmedia.net
+- Location: Hertfordshire, United Kingdom
+
+## Important Pages
+- Homepage: https://gillmedia.net/
+- Restaurant demo: https://gillmedia.net/showcases/restaurant.html
+- Fitness demo: https://gillmedia.net/showcases/fitness.html
+- Salon demo: https://gillmedia.net/showcases/salon.html
+- Trades demo: https://gillmedia.net/showcases/trades.html
+- Aesthetics demo: https://gillmedia.net/showcases/aesthetics.html
