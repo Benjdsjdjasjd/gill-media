@@ -46,11 +46,19 @@
         }
 
         /* ── Back Link ── */
-        .back-link {
+        .gm-back-bar {
             position: fixed;
-            top: 20px;
-            left: 24px;
-            z-index: 1000;
+            top: 0; left: 0; right: 0;
+            z-index: 10000;
+            background: #fff;
+            border-bottom: 1px solid rgba(196,145,155,0.25);
+            padding: 8px 24px;
+            height: 36px;
+            box-sizing: border-box;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
             font-family: 'Nunito Sans', sans-serif;
             font-size: 0.8rem;
             font-weight: 400;
@@ -58,11 +66,6 @@
             color: var(--rose);
             text-decoration: none;
             transition: color 0.3s ease;
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(8px);
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(196,145,155,0.2);
         }
 
         .back-link:hover {
@@ -72,7 +75,7 @@
         /* ── Navigation ── */
         nav {
             position: fixed;
-            top: 0;
+            top: 36px;
             width: 100%;
             z-index: 999;
             background: rgba(255,255,255,0.92);
@@ -876,12 +879,8 @@
                 font-size: 1.4rem;
             }
 
-            .back-link {
-                top: 14px;
-                left: 14px;
-                font-size: 0.7rem;
-                padding: 5px 10px;
-            }
+            .gm-back-bar { padding: 8px 14px; }
+            .back-link { font-size: 0.7rem; }
         }
 
         @media (max-width: 480px) {
@@ -907,7 +906,9 @@
 <body>
 
     <!-- Back Link -->
-    <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
+    <div class="gm-back-bar">
+        <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
+    </div>
 
     <!-- Navigation -->
     <nav id="mainNav">

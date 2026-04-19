@@ -51,12 +51,20 @@
             padding: 0 24px;
         }
 
-        /* ---- BACK LINK ---- */
-        .back-link {
+        /* ---- BACK BAR ---- */
+        .gm-back-bar {
             position: fixed;
-            top: 20px;
-            left: 24px;
-            z-index: 1000;
+            top: 0; left: 0; right: 0;
+            z-index: 10000;
+            background: #0a0a0a;
+            border-bottom: 1px solid var(--grey-border);
+            padding: 8px 24px;
+            height: 36px;
+            box-sizing: border-box;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
             font-family: 'Inter', sans-serif;
             font-size: 13px;
             font-weight: 500;
@@ -64,26 +72,14 @@
             text-decoration: none;
             letter-spacing: 0.02em;
             transition: color 0.3s ease;
-            background: rgba(13, 13, 13, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 8px 14px;
-            border-radius: 6px;
-            border: 1px solid var(--grey-border);
         }
-
-        .back-link:hover {
-            color: var(--lime);
-        }
-
-        .back-link span {
-            margin-right: 6px;
-        }
+        .back-link:hover { color: var(--lime); }
+        .back-link span { margin-right: 6px; }
 
         /* ---- NAV ---- */
         .nav {
             position: fixed;
-            top: 0;
+            top: 36px;
             left: 0;
             right: 0;
             z-index: 900;
@@ -825,12 +821,8 @@
                 align-items: flex-start;
             }
 
-            .back-link {
-                top: 14px;
-                left: 14px;
-                font-size: 11px;
-                padding: 6px 10px;
-            }
+            .gm-back-bar { padding: 8px 14px; }
+            .back-link { font-size: 11px; }
         }
 
         @media (max-width: 480px) {
@@ -848,7 +840,9 @@
 <body>
 
     <!-- Back Link -->
-    <a href="../index.html" class="back-link"><span>&larr;</span> Back to Gill Media</a>
+    <div class="gm-back-bar">
+        <a href="../index.html" class="back-link"><span>&larr;</span> Back to Gill Media</a>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav">

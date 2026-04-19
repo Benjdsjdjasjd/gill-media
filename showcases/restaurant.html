@@ -87,29 +87,33 @@
             background: var(--cream);
         }
 
-        /* ========== BACK LINK ========== */
-        .back-link {
+        /* ========== BACK BAR ========== */
+        .gm-back-bar {
             position: fixed;
-            top: 20px;
-            left: 24px;
-            z-index: 100;
+            top: 0; left: 0; right: 0;
+            z-index: 10000;
+            background: #1a1112;
+            border-bottom: 1px solid rgba(201,169,110,0.18);
+            padding: 8px 24px;
+            height: 36px;
+            box-sizing: border-box;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
             font-size: 13px;
             font-weight: 400;
             letter-spacing: 0.5px;
             color: rgba(255,255,255,0.85);
             transition: color 0.3s;
-            background: rgba(43,43,43,0.5);
-            padding: 8px 16px;
-            border-radius: 4px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            text-decoration: none;
         }
         .back-link:hover { color: var(--gold); }
 
         /* ========== NAVIGATION ========== */
         .site-nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 36px; left: 0; right: 0;
             z-index: 90;
             padding: 18px 0;
             transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
@@ -512,12 +516,8 @@
 
             .contact-details { gap: 36px; }
 
-            .back-link {
-                top: 12px;
-                left: 12px;
-                font-size: 11px;
-                padding: 6px 12px;
-            }
+            .gm-back-bar { padding: 8px 14px; }
+            .back-link { font-size: 11px; }
 
             .about { padding: 70px 0 60px; }
             .menu-section { padding: 60px 0 70px; }
@@ -545,7 +545,9 @@
 <body>
 
     <!-- Back Link -->
-    <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
+    <div class="gm-back-bar">
+        <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
+    </div>
 
     <!-- Navigation -->
     <nav class="site-nav" id="mainNav">

@@ -120,24 +120,22 @@
             text-underline-offset: 2px;
         }
 
-        /* ========== BACK LINK ========== */
+        /* ========== BACK BAR ========== */
+        .gm-back-bar {
+            background: #0e0e0d;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 8px 24px;
+        }
         .back-link {
-            position: fixed;
-            top: 20px;
-            left: 24px;
-            z-index: 200;
+            display: inline-flex;
+            align-items: center;
             font-size: 13px;
             font-weight: 500;
-            color: #fff;
-            transition: all 0.3s;
-            background: var(--charcoal);
-            padding: 10px 18px;
-            border-radius: 100px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.3s;
         }
-        .back-link:hover { background: var(--sage-dark); }
+        .back-link:hover { color: var(--sage); }
 
         /* ========== NAVIGATION ========== */
         .site-nav {
@@ -1442,7 +1440,8 @@
             .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
             .trust-inner { justify-content: center; }
             .trust-item { flex-direction: column; text-align: center; }
-            .back-link { top: 16px; left: 16px; font-size: 12px; padding: 8px 14px; }
+            .gm-back-bar { padding: 7px 14px; }
+            .back-link { font-size: 12px; }
         }
 
         @media (max-width: 480px) {
@@ -1468,13 +1467,15 @@
 </head>
 <body>
 
+    <!-- Back Link -->
+    <div class="gm-back-bar">
+        <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
+    </div>
+
     <!-- Announcement Bar (Conversion) -->
     <div class="announcement">
         <strong>Spring Offer:</strong> 20% off your first treatment &mdash; <a href="#booking">Book your free consultation today</a>
     </div>
-
-    <!-- Back Link (moved to bottom-left, no overlap) -->
-    <a href="../index.html" class="back-link">&larr; Back to Gill Media</a>
 
     <!-- Navigation (8 links = multi-page feel) -->
     <nav class="site-nav" id="mainNav">
