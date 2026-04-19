@@ -57,6 +57,27 @@ a:hover { color: var(--yellow-hover); }
   z-index: 999; font-weight: 700;
 }
 
+/* ---------- Back to Gill Media ---------- */
+.back-link {
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  z-index: 200;
+  font-size: 13px;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+  background: rgba(10,14,42,0.85);
+  padding: 10px 18px;
+  border-radius: 100px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+.back-link:hover { background: #fde900; color: #0a0e2a; }
+
 /* ---------- Typography ---------- */
 h1, h2, h3, h4 {
   font-family: Oswald, Montserrat, system-ui, sans-serif;
