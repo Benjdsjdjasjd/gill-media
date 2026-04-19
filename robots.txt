@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /showcases/vikings/_docs/
+Disallow: /showcases/eastside-hoops/_docs/
 
 Sitemap: https://gillmedia.net/sitemap.xml
