@@ -286,35 +286,58 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Nav theme system — each section gets a completely different nav identity
-    const navThemes = [
-      { el: '.hero', theme: '' },
-      { el: '.services', theme: 'nav--services' },
-      { el: '.work', theme: 'nav--showcases' },
-      { el: '.about', theme: 'nav--about' },
-      { el: '.contact', theme: 'nav--contact' }
-    ];
+  }
 
-    const allNavThemeClasses = ['nav--services', 'nav--showcases', 'nav--about', 'nav--contact'];
+  // ---------- NAV THEME SYSTEM ----------
+  // Each section gets its own nav identity. Positions are measured live on
+  // every scroll frame (not cached), so late font loads or FAQ items
+  // opening/closing can never desync the theme from the section on screen.
+  const navThemes = [
+    { el: document.querySelector('.hero'), theme: '' },
+    { el: document.querySelector('.services'), theme: 'nav--services' },
+    { el: document.querySelector('.work'), theme: 'nav--showcases' },
+    { el: document.querySelector('.about'), theme: 'nav--about' },
+    { el: document.querySelector('.contact'), theme: 'nav--contact' }
+  ].filter(s => s.el);
 
-    function setNavTheme(theme) {
+  const allNavThemeClasses = ['nav--services', 'nav--showcases', 'nav--about', 'nav--contact'];
+  let currentNavTheme = null;
+
+  function updateNavTheme() {
+    const probe = 60; // vertical line through the middle of the nav bar
+    let theme = '';
+    for (const s of navThemes) {
+      const r = s.el.getBoundingClientRect();
+      if (r.top <= probe && r.bottom > probe) { theme = s.theme; break; }
+    }
+    if (theme !== currentNavTheme) {
+      currentNavTheme = theme;
       nav.classList.remove(...allNavThemeClasses);
       if (theme) nav.classList.add(theme);
     }
+  }
 
-    navThemes.forEach(section => {
-      const sectionEl = document.querySelector(section.el);
-      if (!sectionEl) return;
+  let navThemeQueued = false;
+  window.addEventListener('scroll', () => {
+    if (!navThemeQueued) {
+      navThemeQueued = true;
+      requestAnimationFrame(() => { updateNavTheme(); navThemeQueued = false; });
+    }
+  }, { passive: true });
+  window.addEventListener('resize', updateNavTheme);
+  updateNavTheme();
 
-      ScrollTrigger.create({
-        trigger: sectionEl,
-        start: 'top 60px',
-        end: 'bottom 60px',
-        onEnter: () => setNavTheme(section.theme),
-        onEnterBack: () => setNavTheme(section.theme),
-      });
+  // Recalculate GSAP scroll positions when layout actually changes
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
     });
   }
+  document.querySelectorAll('.faq__item').forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+    });
+  });
 
   // ---------- SMOOTH SCROLL ----------
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
