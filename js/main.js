@@ -129,8 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroSection) heroObserver.observe(heroSection);
 
   // ---------- PARTICLE CANVAS ----------
+  // Skipped on small screens (battery) and for users who prefer reduced motion
   const canvas = document.getElementById('heroParticles');
-  if (canvas) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canvas && !reduceMotion && window.innerWidth >= 768) {
     const ctx = canvas.getContext('2d');
     let particles = [];
     let animId;
@@ -249,38 +251,40 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Parallax orbs in hero
-    gsap.to('.hero__orb--1', {
-      y: -100,
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
-    gsap.to('.hero__orb--2', {
-      y: -80,
-      x: 40,
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
+    if (!reduceMotion) {
+      // Parallax orbs in hero
+      gsap.to('.hero__orb--1', {
+        y: -100,
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
+      gsap.to('.hero__orb--2', {
+        y: -80,
+        x: 40,
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
 
-    // Marquee speed up on scroll
-    gsap.to('.marquee__inner', {
-      x: '-=200',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.marquee',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 0.5
-      }
-    });
+      // Marquee speed up on scroll
+      gsap.to('.marquee__inner', {
+        x: '-=200',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.marquee',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 0.5
+        }
+      });
+    }
 
     // Nav theme system — each section gets a completely different nav identity
     const navThemes = [
@@ -426,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---------- GSAP CONTACT SHAPE PARALLAX ----------
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !reduceMotion) {
     gsap.to('.contact__shape--1', {
       y: -60,
       x: 30,

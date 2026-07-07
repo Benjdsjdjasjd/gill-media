@@ -2420,3 +2420,19 @@ button, input, textarea, select { font: inherit; border: none; outline: none; ba
   padding: 0 2rem 1.5rem 0;
   max-width: 720px;
 }
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero__title-word, .hero__subtitle, .hero__actions, .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
