@@ -343,6 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(response => {
         if (response.ok) {
+          if (window.__gaLoaded && typeof gtag === 'function') {
+            gtag('event', 'generate_lead', { form: 'contact' });
+          }
           btn.innerHTML = '<span>Message Sent!</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
           btn.style.background = 'linear-gradient(135deg, #00ff88 0%, #00d4ff 100%)';
           setTimeout(() => {

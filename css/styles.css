@@ -2344,3 +2344,79 @@ button, input, textarea, select { font: inherit; border: none; outline: none; ba
   border: 1px solid rgba(255,255,255,0.2);
 }
 .cookie-banner__btn--decline:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+/* Contact form reassurance line */
+.contact__reassure {
+  margin-top: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+.contact__reassure a { color: rgba(255,255,255,0.7); text-decoration: underline; }
+.contact__reassure a:hover { color: #fff; }
+
+/* Services intro inline link */
+.services__intro-link {
+  color: #6c63ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.services__intro-link:hover { color: #111; }
+
+/* ============================================
+   FAQ (inside About section, warm theme)
+   ============================================ */
+.faq {
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(45,41,38,0.1);
+}
+.faq__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: #2d2926;
+  margin-bottom: 2rem;
+}
+.faq__list {
+  display: flex;
+  flex-direction: column;
+}
+.faq__item {
+  border-bottom: 1px solid rgba(45,41,38,0.1);
+}
+.faq__question {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d2926;
+  padding: 1.25rem 2rem 1.25rem 0;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+.faq__question::-webkit-details-marker { display: none; }
+.faq__question::after {
+  content: '+';
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #c4956a;
+  transition: transform 0.25s ease;
+}
+.faq__item[open] .faq__question::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq__question:hover { color: #c4956a; }
+.faq__answer {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #8b7355;
+  line-height: 1.7;
+  padding: 0 2rem 1.5rem 0;
+  max-width: 720px;
+}
