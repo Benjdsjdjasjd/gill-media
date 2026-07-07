@@ -270,26 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // About image parallax
-    gsap.to('.about__image-frame--1', {
-      y: -30,
-      scrollTrigger: {
-        trigger: '.about__visual',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
-    gsap.to('.about__image-frame--2', {
-      y: 20,
-      scrollTrigger: {
-        trigger: '.about__visual',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
-
     // Marquee speed up on scroll
     gsap.to('.marquee__inner', {
       x: '-=200',
@@ -385,6 +365,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
       });
     });
+  }
+
+  // ---------- COOKIE CONSENT ----------
+  const cookieBanner = document.getElementById('cookieBanner');
+  if (cookieBanner) {
+    let consent = null;
+    try { consent = localStorage.getItem('gm-cookie-consent'); } catch (e) {}
+    if (!consent) cookieBanner.hidden = false;
+
+    const setConsent = (value) => {
+      try { localStorage.setItem('gm-cookie-consent', value); } catch (e) {}
+      cookieBanner.hidden = true;
+      if (value === 'granted' && window.loadAnalytics) window.loadAnalytics();
+    };
+    document.getElementById('cookieAccept').addEventListener('click', () => setConsent('granted'));
+    document.getElementById('cookieDecline').addEventListener('click', () => setConsent('denied'));
   }
 
   // ---------- MAGNETIC BUTTON EFFECT ----------

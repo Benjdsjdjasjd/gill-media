@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-709QD5XZG7"></script>
+  <!-- Google Analytics — only loads after cookie consent (UK GDPR/PECR) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-709QD5XZG7');
+    window.loadAnalytics = function() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-709QD5XZG7';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-709QD5XZG7');
+    };
+    try {
+      if (localStorage.getItem('gm-cookie-consent') === 'granted') window.loadAnalytics();
+    } catch (e) {}
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -171,7 +181,7 @@
     <div class="hero__content">
       <div class="hero__tag">
         <span class="hero__tag-line"></span>
-        <span class="hero__tag-text">Digital Marketing Agency</span>
+        <span class="hero__tag-text">Web Design &mdash; Bishop's Stortford</span>
       </div>
 
       <h1 class="hero__title">
@@ -456,7 +466,7 @@
       <div class="work__header">
         <span class="section-tag section-tag--light">02 — Showcases</span>
         <h2 class="work__title">Websites that<br><span class="work__title-glow">deliver results</span></h2>
-        <p class="work__subtitle">Real examples of the kind of sites we build. Different industries, different styles &mdash; same commitment to quality.</p>
+        <p class="work__subtitle">Real templates I've designed and built &mdash; not stock mockups. Pick a direction you like and I'll customise it to your business.</p>
       </div>
 
       <!-- Showcase grid -->
@@ -660,16 +670,22 @@
         </div>
 
         <div class="about__visual">
-          <div class="about__image-stack">
-            <div class="about__image-frame about__image-frame--1">
-              <div class="about__image-placeholder" style="background: linear-gradient(135deg, #c4956a 0%, #8b7355 100%);">
-                <span>The Founder</span>
-              </div>
+          <div class="about__facts">
+            <div class="about__fact">
+              <span class="about__fact-label">Who you'll deal with</span>
+              <span class="about__fact-value">Ben Gill &mdash; designer, developer, one point of contact</span>
             </div>
-            <div class="about__image-frame about__image-frame--2">
-              <div class="about__image-placeholder" style="background: linear-gradient(135deg, #2d2926 0%, #5a4f4a 100%); color: #f5f0e8;">
-                <span>At Work</span>
-              </div>
+            <div class="about__fact">
+              <span class="about__fact-label">Based in</span>
+              <span class="about__fact-value">Bishop's Stortford, Hertfordshire</span>
+            </div>
+            <div class="about__fact">
+              <span class="about__fact-label">Direct email</span>
+              <span class="about__fact-value"><a href="mailto:info@gillmedia.net">info@gillmedia.net</a></span>
+            </div>
+            <div class="about__fact">
+              <span class="about__fact-label">Typical reply time</span>
+              <span class="about__fact-value">Same day &mdash; usually within the hour</span>
             </div>
           </div>
           <div class="about__experience">
@@ -801,11 +817,20 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Gill Media. All rights reserved.</p>
-        <p>Designed & built with precision.</p>
+        <p>&copy; 2026 Gill Media &middot; Bishop's Stortford, Hertfordshire &middot; <a href="privacy.html" class="footer__legal-link">Privacy Policy</a></p>
+        <p>Designed & built by Ben Gill.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Cookie consent banner -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent" hidden>
+    <p>I use one analytics cookie (Google Analytics) to see how the site is used. No ads, no tracking across other sites. <a href="privacy.html">Privacy policy</a></p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Accept</button>
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--decline" id="cookieDecline">Decline</button>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
