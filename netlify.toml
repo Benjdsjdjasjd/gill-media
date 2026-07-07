@@ -2,7 +2,7 @@
   publish = "."
 
 [forms]
-  spam_filter = false
+  spam_filter = true
 
 # Security & SEO headers
 [[headers]]

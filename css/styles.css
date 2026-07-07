@@ -591,6 +591,15 @@ button, input, textarea, select { font: inherit; border: none; outline: none; ba
   100% { top: 150%; }
 }
 
+/* Visually hidden (honeypot, screen-reader-only text) */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 /* Hero stats */
 .hero__stats {
   position: absolute;

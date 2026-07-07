@@ -204,12 +204,12 @@
 
     <div class="hero__stats">
       <div class="hero__stat">
-        <span class="hero__stat-number" data-count="100">0</span><span class="hero__stat-suffix">%</span>
-        <span class="hero__stat-label">Dedicated to You</span>
+        <span class="hero__stat-suffix">&pound;</span><span class="hero__stat-number" data-count="299">0</span>
+        <span class="hero__stat-label">Websites From</span>
       </div>
       <div class="hero__stat">
-        <span class="hero__stat-number" data-count="3">0</span><span class="hero__stat-suffix"></span>
-        <span class="hero__stat-label">Flexible Packages</span>
+        <span class="hero__stat-number" data-count="7">0</span><span class="hero__stat-suffix"></span>
+        <span class="hero__stat-label">Days to Launch</span>
       </div>
       <div class="hero__stat">
         <span class="hero__stat-number" data-count="24">0</span><span class="hero__stat-suffix">hr</span>
@@ -724,8 +724,11 @@
       </div>
 
       <div class="contact__body">
-        <form class="contact__form" id="contactForm" name="contact" method="POST" data-netlify="true">
+        <form class="contact__form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
+          <p class="visually-hidden" aria-hidden="true">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
           <div class="form-row">
             <div class="form-group">
               <label for="contactName">Your Name</label>
@@ -765,11 +768,17 @@
         <div class="contact__info">
           <div class="contact__info-card">
             <h4>Email</h4>
-            <a href="mailto:info@gillmedia.co.uk">info@gillmedia.co.uk</a>
+            <a href="mailto:info@gillmedia.net">info@gillmedia.net</a>
           </div>
+          <!-- TODO(Ben): paste your real number into both the href and the text, then uncomment.
+          <div class="contact__info-card">
+            <h4>Phone / WhatsApp</h4>
+            <a href="tel:+447XXXXXXXXX">07XXX XXXXXX</a>
+          </div>
+          -->
           <div class="contact__info-card">
             <h4>Location</h4>
-            <p>United Kingdom</p>
+            <p>Bishop's Stortford, Hertfordshire</p>
           </div>
         </div>
       </div>
