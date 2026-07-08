@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /showcases/eastside-hoops/_docs/
+Disallow: /preview/
 
 Sitemap: https://gillmedia.net/sitemap.xml
